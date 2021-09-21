@@ -31,6 +31,8 @@ namespace Halli_Galli
         private Texture2D pflaume_3;
         private Texture2D pflaume_4;
         private Texture2D pflaume_5;
+        private float angle = 0.0f;
+        private int player = 4;
 
         public Game1()
         {
@@ -71,11 +73,11 @@ namespace Halli_Galli
             limette_3 = Content.Load<Texture2D>("img/Limette_3");
             limette_4 = Content.Load<Texture2D>("img/Limette_4");
             limette_5 = Content.Load<Texture2D>("img/Limette_5");
-            pflaume_1 = Content.Load<Texture2D>("img/Pflauem_1");
-            pflaume_2 = Content.Load<Texture2D>("img/Pflauem_2");
-            pflaume_3 = Content.Load<Texture2D>("img/Pflauem_3");
-            pflaume_4 = Content.Load<Texture2D>("img/Pflauem_4");
-            pflaume_5 = Content.Load<Texture2D>("img/Pflauem_5");
+            pflaume_1 = Content.Load<Texture2D>("img/Pflaume_1");
+            pflaume_2 = Content.Load<Texture2D>("img/Pflaume_2");
+            pflaume_3 = Content.Load<Texture2D>("img/Pflaume_3");
+            pflaume_4 = Content.Load<Texture2D>("img/Pflaume_4");
+            pflaume_5 = Content.Load<Texture2D>("img/Pflaume_5");
         }
 
         protected override void Update(GameTime gameTime)
@@ -100,6 +102,28 @@ namespace Halli_Galli
             _spriteBatch.Draw(background, new Rectangle(960, 540, 960, 540), Color.White);
 
             _spriteBatch.Draw(klingel, new Vector2(960 - (klingel.Width/2), 540 - (klingel.Height/2)), Color.White);
+
+            Rectangle sourceRectangle = new Rectangle(0, 0, kartenrückseite.Width, kartenrückseite.Height);
+            Vector2 origin = new Vector2(kartenrückseite.Width / 2, 2);
+
+            if (player == 2)
+            {
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 540), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 540), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
+            }
+            else if (player == 3)
+            {
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 2, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
+            }
+            else if (player == 4)
+            {
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080  / 3), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                _spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 / 3), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+            }
 
             _spriteBatch.End();
 
