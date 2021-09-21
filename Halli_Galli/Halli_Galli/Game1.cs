@@ -11,6 +11,26 @@ namespace Halli_Galli
         private Texture2D background;
         private Texture2D kartenrückseite;
         private Texture2D klingel;
+        private Texture2D banane_1;
+        private Texture2D banane_2;
+        private Texture2D banane_3;
+        private Texture2D banane_4;
+        private Texture2D banane_5;
+        private Texture2D erdbeere_1;
+        private Texture2D erdbeere_2;
+        private Texture2D erdbeere_3;
+        private Texture2D erdbeere_4;
+        private Texture2D erdbeere_5;
+        private Texture2D limette_1;
+        private Texture2D limette_2;
+        private Texture2D limette_3;
+        private Texture2D limette_4;
+        private Texture2D limette_5;
+        private Texture2D pflaume_1;
+        private Texture2D pflaume_2;
+        private Texture2D pflaume_3;
+        private Texture2D pflaume_4;
+        private Texture2D pflaume_5;
 
         public Game1()
         {
@@ -36,6 +56,26 @@ namespace Halli_Galli
             background = Content.Load<Texture2D>("img/Tisch");
             kartenrückseite = Content.Load<Texture2D>("img/Karten_Ruckseite");
             klingel = Content.Load<Texture2D>("img/Klingel");
+            banane_1 = Content.Load<Texture2D>("img/Banane_1");
+            banane_2 = Content.Load<Texture2D>("img/Banane_2");
+            banane_3 = Content.Load<Texture2D>("img/Banane_3");
+            banane_4 = Content.Load<Texture2D>("img/Banane_4");
+            banane_5 = Content.Load<Texture2D>("img/Banane_5");
+            erdbeere_1 = Content.Load<Texture2D>("img/Erdbeere_1");
+            erdbeere_2 = Content.Load<Texture2D>("img/Erdbeere_2");
+            erdbeere_3 = Content.Load<Texture2D>("img/Erdbeere_3");
+            erdbeere_4 = Content.Load<Texture2D>("img/Erdbeere_4");
+            erdbeere_5 = Content.Load<Texture2D>("img/Erdbeere_5");
+            limette_1 = Content.Load<Texture2D>("img/Limette_1");
+            limette_2 = Content.Load<Texture2D>("img/Limette_2");
+            limette_3 = Content.Load<Texture2D>("img/Limette_3");
+            limette_4 = Content.Load<Texture2D>("img/Limette_4");
+            limette_5 = Content.Load<Texture2D>("img/Limette_5");
+            pflaume_1 = Content.Load<Texture2D>("img/Pflauem_1");
+            pflaume_2 = Content.Load<Texture2D>("img/Pflauem_2");
+            pflaume_3 = Content.Load<Texture2D>("img/Pflauem_3");
+            pflaume_4 = Content.Load<Texture2D>("img/Pflauem_4");
+            pflaume_5 = Content.Load<Texture2D>("img/Pflauem_5");
         }
 
         protected override void Update(GameTime gameTime)
