@@ -9,6 +9,8 @@ namespace Halli_Galli
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Texture2D background;
+        private Texture2D kartenrückseite;
+        private Texture2D klingel;
 
         public Game1()
         {
@@ -32,7 +34,8 @@ namespace Halli_Galli
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             background = Content.Load<Texture2D>("img/Tisch");
-            // TODO: use this.Content to load your game content here
+            kartenrückseite = Content.Load<Texture2D>("img/Karten_Ruckseite");
+            klingel = Content.Load<Texture2D>("img/Klingel");
         }
 
         protected override void Update(GameTime gameTime)
@@ -56,6 +59,7 @@ namespace Halli_Galli
             _spriteBatch.Draw(background, new Rectangle(0, 540, 960, 540), Color.White);
             _spriteBatch.Draw(background, new Rectangle(960, 540, 960, 540), Color.White);
 
+            _spriteBatch.Draw(klingel, new Vector2(960 - (klingel.Width/2), 540 - (klingel.Height/2)), Color.White);
 
             _spriteBatch.End();
 
