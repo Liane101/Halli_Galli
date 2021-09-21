@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Banane_1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Banane_2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Banane_4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Banane_5.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Erdbeere_1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Erdbeere_2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Erdbeere_3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Erdbeere_4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Erdbeere_5.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Erdbeere_x4.jpg</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Karten_Ruckseite.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Limette_1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Limette_2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Limette_3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Limette_4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Limette_5.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Pflaume_1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Pflaume_2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Pflaume_3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Pflaume_4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Pflaume_5.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Galli/Halli_Galli/Content/img/Tisch.jpg</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

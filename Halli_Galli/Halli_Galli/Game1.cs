@@ -8,6 +8,7 @@ namespace Halli_Galli
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Texture2D background;
 
         public Game1()
         {
@@ -18,7 +19,10 @@ namespace Halli_Galli
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            _graphics.PreferredBackBufferWidth = 1920;
+            _graphics.PreferredBackBufferHeight = 1080;
+            _graphics.IsFullScreen = true;
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -27,6 +31,7 @@ namespace Halli_Galli
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            background = Content.Load<Texture2D>("img/Tisch");
             // TODO: use this.Content to load your game content here
         }
 
@@ -44,7 +49,15 @@ namespace Halli_Galli
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+
+            _spriteBatch.Draw(background, new Rectangle(0, 0, 960, 540), Color.White);
+            _spriteBatch.Draw(background, new Rectangle(960, 0, 960, 540), Color.White);
+            _spriteBatch.Draw(background, new Rectangle(0, 540, 960, 540), Color.White);
+            _spriteBatch.Draw(background, new Rectangle(960, 540, 960, 540), Color.White);
+
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
