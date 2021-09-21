@@ -32,7 +32,8 @@ namespace Halli_Galli
         private Texture2D pflaume_4;
         private Texture2D pflaume_5;
         private float angle = 0.0f;
-        private int player = 4;
+        private int player = 0;
+        private int counter;
 
         public Game1()
         {
@@ -85,7 +86,7 @@ namespace Halli_Galli
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            counter++;
 
             base.Update(gameTime);
         }
@@ -124,6 +125,7 @@ namespace Halli_Galli
                 _spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080  / 3), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
                 _spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 / 3), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
             }
+           
 
             _spriteBatch.End();
 
