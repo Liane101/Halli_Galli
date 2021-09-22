@@ -18,6 +18,7 @@ namespace Halli_Galli
         private SpriteFont font;
         private State _currentState;
         private State _nextState;
+        public static int player;
 
 
         public void ChangeState(State state)
@@ -46,8 +47,8 @@ namespace Halli_Galli
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _currentState = new MenuState(this, _graphics.GraphicsDevice, Content);
 
-            background = Content.Load<Texture2D>("Tisch");
-            font = Content.Load<SpriteFont>("File");
+            background = Content.Load<Texture2D>("img/Tisch");
+            font = Content.Load<SpriteFont>("Fonts/File");
         }
 
         protected override void Update(GameTime gameTime)

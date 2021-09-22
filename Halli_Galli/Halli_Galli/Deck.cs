@@ -100,7 +100,7 @@ namespace Halli_Galli
                 return false;
         }
     }
-    class Card
+    public class Card
     {
         public int Value;
         public static string[] FruitsArray = new string[] { "Erdbeere", "Limette", "Pflaume", "Banane" };

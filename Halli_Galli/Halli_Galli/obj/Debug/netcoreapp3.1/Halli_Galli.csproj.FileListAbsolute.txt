@@ -189,3 +189,8 @@ C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\obj\Debug\netcore
 C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.dll
 C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.pdb
 C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Fonts\File.xnb
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Button.xnb
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 1.xnb
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 2.xnb
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 3.xnb

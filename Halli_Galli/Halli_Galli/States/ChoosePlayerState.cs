@@ -10,11 +10,12 @@ namespace Halli_Galli.States
 {
     public class ChoosePlayerState : State
     {
+        public static int player;
         private List<Component> _components;
 
         public ChoosePlayerState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
-            var buttonTexture = _content.Load<Texture2D>("Controls/Button");
+            var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
             var spieler2Button = new Button(buttonTexture, buttonFont)
             {
@@ -63,18 +64,18 @@ namespace Halli_Galli.States
         }
         private void Spieler2_Click(object sender, EventArgs e)
         {
-            _game.player = 2;
+            GameState.player = 2;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
         private void Spieler3_Click(object sender, EventArgs e)
         {
-            _game.player = 2;
+            GameState.player = 3;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
 
         private void Spieler4_Click(object sender, EventArgs e)
         {
-            _game.player = 2;
+            GameState.player = 4;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
 
