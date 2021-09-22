@@ -126,7 +126,7 @@ namespace Halli_Galli
             }
         }
     }
-    class Player
+    public class Player
     {
         public List<Card> Karten = new List<Card>();
         public Player(List<Card> Kartenliste)
