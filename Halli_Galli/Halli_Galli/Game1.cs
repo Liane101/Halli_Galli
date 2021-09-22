@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Halli_Galli.States;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -49,9 +50,14 @@ namespace Halli_Galli
         public bool start = true;
         private List<Card> Tisch = new List<Card>();
         private Player[] Spieler = new Player[2];
+        private State _currentState;
+        private State _nextState;
 
 
-
+        public void ChangeState(State state)
+        {
+            _nextState = state;
+        }
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
