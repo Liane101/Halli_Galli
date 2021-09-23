@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Microsoft.Xna.Framework.Content;
+using Halli_Galli.Controls;
 
 namespace Halli_Galli.States
 {
@@ -49,6 +50,9 @@ namespace Halli_Galli.States
         public bool start = true;
         public bool nextCard = false;
         private List<Card> Tisch = new List<Card>();
+        private List<Component> _components;
+        private Texture2D leertaste;
+
         //private FontManager manager;
 
         //private string testString = "Welcher Spieler hat die Leertaste gedrückt?";
@@ -85,15 +89,70 @@ namespace Halli_Galli.States
             pflaume_4 = _content.Load<Texture2D>("img/Pflaume_4");
             pflaume_5 = _content.Load<Texture2D>("img/Pflaume_5");
             font = _content.Load<SpriteFont>("File");
+            leertaste = _content.Load<Texture2D>("img/Leertaste");
 
             //font1 = manager.GetFont(fontFile1, 80);
             //text1 = font1.MakeText(testString);
             //manager = new FontManager(GraphicsDevice);
 
+            //Posiotonen ändern
+            var buttonTexture = _content.Load<Texture2D>("img/Button");
+            var buttonFont = _content.Load<SpriteFont>("Fonts/File");
+            var spieler1Button = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(800, 480),
+                Text = "Spieler 1"
+            };
 
+            spieler1Button.Click += Spieler2_Click;
+
+            var spieler2Button = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(880, 480),
+                Text = "Spieler 2"
+            };
+
+            spieler2Button.Click += Spieler2_Click;
+
+            var spieler3Button = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(880, 530),
+                Text = "Spieler 3"
+            };
+
+            spieler3Button.Click += Spieler3_Click;
+
+            var spieler4Button = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(880, 580),
+                Text = "Spieler 4"
+            };
+            _components = new List<Component>
+            {
+                spieler1Button,
+                spieler2Button,
+                spieler3Button,
+                spieler4Button,
+            };
         }
 
+        private void Spieler1_Click(object sender, EventArgs e)
+        {
 
+        }
+        private void Spieler2_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void Spieler3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Spieler4_Click(object sender, EventArgs e)
+        {
+            
+        }
         public override void Update(GameTime gameTime)
         {
 
@@ -105,8 +164,10 @@ namespace Halli_Galli.States
                 
 
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
-            geklingelt = true;
+                geklingelt = true;
 
+            foreach (var item in _components)
+                item.Update(gameTime);
             //base.Update(gameTime);
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -302,7 +363,11 @@ namespace Halli_Galli.States
                 }
             }
             else {
-                //spriteBatch.DrawString(font1, testString, new Vector2(150, -15), Color.Pink, 0.1f, Vector2.Zero, new Vector2(.5f, .5f), SpriteEffects.None, 1f);
+                spriteBatch.Draw(leertaste, new Vector2(234, 150), Color.White);
+                foreach (var item in _components)
+                {
+                    item.Draw(gameTime, spriteBatch);
+                }
             }
             
 
