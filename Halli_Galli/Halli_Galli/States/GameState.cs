@@ -41,10 +41,21 @@ namespace Halli_Galli.States
         public int player2;
         public int player3;
         public int player4;
+        private static readonly TimeSpan intervalBetweenAttack = TimeSpan.FromMilliseconds(1000);
+        private TimeSpan lastTimeAttack;
         public int runde;
         public int rundeKarten;
+        private bool geklingelt = false;
         public bool start = true;
+        public bool nextCard = false;
         private List<Card> Tisch = new List<Card>();
+        //private FontManager manager;
+
+        //private string testString = "Welcher Spieler hat die Leertaste gedrückt?";
+        ////private string fontFile1 = "Content\\Simpel-Medium.otf";
+
+        //Font font1;
+        //Font font2;
 
         public GameState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
@@ -75,8 +86,9 @@ namespace Halli_Galli.States
             pflaume_5 = _content.Load<Texture2D>("img/Pflaume_5");
             font = _content.Load<SpriteFont>("File");
 
-
-            
+            //font1 = manager.GetFont(fontFile1, 80);
+            //text1 = font1.MakeText(testString);
+            //manager = new FontManager(GraphicsDevice);
 
 
         }
@@ -85,13 +97,15 @@ namespace Halli_Galli.States
         public override void Update(GameTime gameTime)
         {
 
-            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            //    Exit();
+            if (lastTimeAttack + intervalBetweenAttack < gameTime.TotalGameTime)
+            {
+                lastTimeAttack = gameTime.TotalGameTime;
+                nextCard = true;
+            }
+                
 
-
-            //Thread.Sleep(30);
-
-
+            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            geklingelt = true;
 
             //base.Update(gameTime);
         }
@@ -100,6 +114,8 @@ namespace Halli_Galli.States
             
 
             spriteBatch.Begin();
+
+
 
 
             Texture2D[] Früchte = { banane_1,
@@ -124,163 +140,173 @@ namespace Halli_Galli.States
                                     pflaume_5
             };
 
-
-            spriteBatch.Draw(klingel, new Vector2(960 - (klingel.Width / 2), 540 - (klingel.Height / 2)), Color.White);
-
-            Rectangle sourceRectangle = new Rectangle(0, 0, kartenrückseite.Width, kartenrückseite.Height);
-            Vector2 origin = new Vector2(kartenrückseite.Width / 2, 2);
-
-            if (player == 2)
+            if (geklingelt == false)
             {
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 540 + 190), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 540 - 190), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
-            }
-            else if (player == 3)
-            {
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 2, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
-            }
-            else if (player == 4)
-            {
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 / 3), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
-                spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 / 3), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
-            }
+                spriteBatch.Draw(klingel, new Vector2(960 - (klingel.Width / 2), 540 - (klingel.Height / 2)), Color.White);
 
+                Rectangle sourceRectangle = new Rectangle(0, 0, kartenrückseite.Width, kartenrückseite.Height);
+                Vector2 origin = new Vector2(kartenrückseite.Width / 2, 2);
 
-
-            if (player == 2)
-            {
-                if (runde > 0)
-                    spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4, 540), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
-
-                if (runde > 1)
-                    spriteBatch.Draw(Früchte[player2], new Vector2(1920 * 3 / 4, 540), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
-            }
-            else if (player == 3)
-            {
-                if (runde > 0)
-                    spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4 + 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
-
-                if (runde > 1)
-                    spriteBatch.Draw(Früchte[player3], new Vector2(1920 * 3 / 4 - 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
-
-                if (runde > 2)
-                    spriteBatch.Draw(Früchte[player2], new Vector2(1920 / 2 - 170, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
-            }
-            else if (player == 4)
-            {
-                if (runde > 0)
-                    spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4 + 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
-
-                if (runde > 3)
-                    spriteBatch.Draw(Früchte[player4], new Vector2(1920 * 3 / 4 - 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
-
-                if (runde > 1)
-                    spriteBatch.Draw(Früchte[player2], new Vector2(1920 / 4 + 120, 1080 / 3 - 120), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
-
-                if (runde > 2)
-                    spriteBatch.Draw(Früchte[player3], new Vector2(1920 * 3 / 4 - 120, 1080 / 3 - 120), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
-            }
-
-            spriteBatch.DrawString(font, "" + Tisch.Count, new Vector2(900, 500), Color.Black);
-
-            runde++;
-            rundeKarten++;
-
-            if (start)
-            {
-
-                Deck.FillDeck();
-                Deck.ShuffleDeck();
-
-                Card[] deck = Deck.Deckzurückgeben();
-
-
-
-                for (int i = 0; i < Spieler.Length; i++)
+                if (player == 2)
                 {
-                    List<Card> Kartenliste = new List<Card>();
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 540 + 190), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 540 - 190), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
+                }
+                else if (player == 3)
+                {
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 2, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
+                }
+                else if (player == 4)
+                {
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 / 3), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 / 3), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                }
 
-                    for (int k = 0; k < deck.Length / player; k++)
+
+
+                if (player == 2)
+                {
+                    if (runde > 0)
+                        spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4, 540), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
+
+                    if (runde > 1)
+                        spriteBatch.Draw(Früchte[player2], new Vector2(1920 * 3 / 4, 540), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
+                }
+                else if (player == 3)
+                {
+                    if (runde > 0)
+                        spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4 + 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
+
+                    if (runde > 1)
+                        spriteBatch.Draw(Früchte[player3], new Vector2(1920 * 3 / 4 - 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+
+                    if (runde > 2)
+                        spriteBatch.Draw(Früchte[player2], new Vector2(1920 / 2 - 170, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
+                }
+                else if (player == 4)
+                {
+                    if (runde > 0)
+                        spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4 + 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
+
+                    if (runde > 3)
+                        spriteBatch.Draw(Früchte[player4], new Vector2(1920 * 3 / 4 - 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+
+                    if (runde > 1)
+                        spriteBatch.Draw(Früchte[player2], new Vector2(1920 / 4 + 120, 1080 / 3 - 120), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+
+                    if (runde > 2)
+                        spriteBatch.Draw(Früchte[player3], new Vector2(1920 * 3 / 4 - 120, 1080 / 3 - 120), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                }
+
+                spriteBatch.DrawString(font, "" + Tisch.Count, new Vector2(900, 500), Color.Black);
+
+                if (nextCard)
+                {
+                    runde++;
+                    rundeKarten++;
+                }
+
+
+                if (start)
+                {
+
+                    Deck.FillDeck();
+                    Deck.ShuffleDeck();
+
+                    Card[] deck = Deck.Deckzurückgeben();
+
+
+
+                    for (int i = 0; i < Spieler.Length; i++)
                     {
-                        Kartenliste.Add(deck[k + (deck.Length / player * i)]);
+                        List<Card> Kartenliste = new List<Card>();
+
+                        for (int k = 0; k < deck.Length / player; k++)
+                        {
+                            Kartenliste.Add(deck[k + (deck.Length / player * i)]);
+                        }
+                        Spieler[i] = new Player(Kartenliste);
                     }
-                    Spieler[i] = new Player(Kartenliste);
+
+                    start = false;
                 }
 
-                start = false;
-            }
-
-            if (runde > 0)
-            {
-                Tisch.Insert(rundeKarten - 1, Spieler[runde % player].Karten[0]);
-                Spieler[runde % player].Karten.RemoveAt(0);
-            }
 
 
-
-
-
-
-
-
-            if (player >= 2 && rundeKarten > 0)
-            {
-                player1 = 0;
-                player1 += Tisch[0].Value - 1;
-
-                if (Tisch[0].Fruit == "Erdbeere")
-                    player1 += 5;
-                if (Tisch[0].Fruit == "Limette")
-                    player1 += 10;
-                if (Tisch[0].Fruit == "Pflaume")
-                    player1 += 15;
-
-                if (rundeKarten > 1)
+                if (nextCard)
                 {
-                    player2 = 0;
-                    player2 += Tisch[0].Value - 1;
+                    if (runde > 0)
+                    {
+                        Tisch.Insert(rundeKarten - 1, Spieler[runde % player].Karten[0]);
+                        Spieler[runde % player].Karten.RemoveAt(0);
+                    }
 
-                    if (Tisch[1].Fruit == "Erdbeere")
-                        player2 += 5;
-                    if (Tisch[1].Fruit == "Limette")
-                        player2 += 10;
-                    if (Tisch[1].Fruit == "Pflaume")
-                        player2 += 15;
+                    if (player >= 2 && rundeKarten > 0)
+                    {
+                        player1 = 0;
+                        player1 += Tisch[0].Value - 1;
+
+                        if (Tisch[0].Fruit == "Erdbeere")
+                            player1 += 5;
+                        if (Tisch[0].Fruit == "Limette")
+                            player1 += 10;
+                        if (Tisch[0].Fruit == "Pflaume")
+                            player1 += 15;
+
+                        if (rundeKarten > 1)
+                        {
+                            player2 = 0;
+                            player2 += Tisch[0].Value - 1;
+
+                            if (Tisch[1].Fruit == "Erdbeere")
+                                player2 += 5;
+                            if (Tisch[1].Fruit == "Limette")
+                                player2 += 10;
+                            if (Tisch[1].Fruit == "Pflaume")
+                                player2 += 15;
+                        }
+                    }
+                    if (player >= 3 && rundeKarten > 2)
+                    {
+                        player3 = 0;
+                        player3 += Tisch[2].Value - 1;
+
+                        if (Tisch[2].Fruit == "Erdbeere")
+                            player3 += 5;
+                        if (Tisch[2].Fruit == "Limette")
+                            player3 += 10;
+                        if (Tisch[2].Fruit == "Pflaume")
+                            player3 += 15;
+                    }
+                    if (player >= 4 && rundeKarten > 3)
+                    {
+                        player4 = 0;
+                        player4 += Tisch[3].Value - 1;
+
+                        if (Tisch[3].Fruit == "Erdbeere")
+                            player4 += 5;
+                        if (Tisch[3].Fruit == "Limette")
+                            player4 += 10;
+                        if (Tisch[3].Fruit == "Pflaume")
+                            player4 += 15;
+                    }
+
+                    if (rundeKarten == player)
+                        rundeKarten = 0;
+
+                    nextCard = false;
                 }
             }
-            if (player >= 3 && rundeKarten > 2)
-            {
-                player3 = 0;
-                player3 += Tisch[2].Value - 1;
-
-                if (Tisch[2].Fruit == "Erdbeere")
-                    player3 += 5;
-                if (Tisch[2].Fruit == "Limette")
-                    player3 += 10;
-                if (Tisch[2].Fruit == "Pflaume")
-                    player3 += 15;
+            else {
+                //spriteBatch.DrawString(font1, testString, new Vector2(150, -15), Color.Pink, 0.1f, Vector2.Zero, new Vector2(.5f, .5f), SpriteEffects.None, 1f);
             }
-            if (player >= 4 && rundeKarten > 3)
-            {
-                player4 = 0;
-                player4 += Tisch[3].Value - 1;
+            
 
-                if (Tisch[3].Fruit == "Erdbeere")
-                    player4 += 5;
-                if (Tisch[3].Fruit == "Limette")
-                    player4 += 10;
-                if (Tisch[3].Fruit == "Pflaume")
-                    player4 += 15;
-            }
-
-            if (rundeKarten == player)
-                rundeKarten = 0;
-
-            Thread.Sleep(1000);
+            
             spriteBatch.End();
 
             

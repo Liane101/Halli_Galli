@@ -10,7 +10,9 @@ namespace Halli_Galli.States
 {
     public class HelpState : State
     {
-        private List<Component> _components;
+        private List<Component> _back;
+        private List<Component> _forward;
+        private List<Component> _newGame;
         private Texture2D Hilfe1;
         private Texture2D Hilfe2;
         private Texture2D Hilfe3;
@@ -20,41 +22,87 @@ namespace Halli_Galli.States
             Hilfe1 = _content.Load<Texture2D>("img/Hilfe Seite 1");
             Hilfe2 = _content.Load<Texture2D>("img/Hilfe Seite 2");
             Hilfe3 = _content.Load<Texture2D>("img/Hilfe Seite 3");
+
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
-            var backButton = new Button(buttonTexture, buttonFont)
+            var forwardButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(1850, 950),
+                Position = new Vector2(1700, 950),
                 Text = "weiter"
             };
 
-            backButton.Click += forward_Click;
+            forwardButton.Click += forward_Click;
 
-            _components = new List<Component>
+            var backButton = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(1530, 950),
+                Text = "Zurueck"
+            };
+
+            backButton.Click += back_Click;
+
+            _back = new List<Component>
             {
                 backButton
             };
+
+            _forward = new List<Component>
+            {
+                forwardButton
+            };
+
         }
 
+        private void NewGameButton_Click(object sender, EventArgs e)
+        {
+            _game.ChangeState(new ChoosePlayerState(_game, _graphicsDevice, _content));
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            if (Seite > 1)
+                Seite--;
+            else
+                _game.ChangeState(new MenuState(_game, _graphicsDevice, _content));
+        }
         private void forward_Click(object sender, EventArgs e)
         {
-            Seite++;
+            if (Seite <= 2)
+                Seite++;
+            else
+                Seite += 0;
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
 
+            foreach (var item in _back)
+            {
+                item.Draw(gameTime, spriteBatch);
+            }
 
-
-            if(Seite == 1)
+            if (Seite == 1)
+            {
                 spriteBatch.Draw(Hilfe1, new Rectangle(0, 0, 1920, 1080), Color.White);
+                foreach (var item in _forward)
+                {
+                    item.Draw(gameTime, spriteBatch);
+                }
+            }
 
-            if(Seite == 2)
+            if (Seite == 2)
+            {
                 spriteBatch.Draw(Hilfe2, new Rectangle(0, 0, 1920, 1080), Color.White);
+                foreach (var item in _forward)
+                {
+                    item.Draw(gameTime, spriteBatch);
+                }
+            }
 
             if (Seite == 3)
-                spriteBatch.Draw(Hilfe2, new Rectangle(0, 0, 1920, 1080), Color.White);
-
+            {
+                spriteBatch.Draw(Hilfe3, new Rectangle(0, 0, 1920, 1080), Color.White);
+            }
 
             spriteBatch.End();
         }
@@ -66,7 +114,10 @@ namespace Halli_Galli.States
 
         public override void Update(GameTime gameTime)
         {
-            
+            foreach (var item in _back)
+                item.Update(gameTime);
+            foreach(var item in _forward)
+                item.Update(gameTime);
         }
     }
 }
