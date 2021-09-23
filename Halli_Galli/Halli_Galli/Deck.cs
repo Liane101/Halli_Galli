@@ -71,7 +71,7 @@ namespace Halli_Galli
             int erdbeeren = 0;
             int bananen = 0;
 
-            int bereich;
+            int bereich = 0;
 
             if (Tisch.Count > Spieleranzahl)
                 bereich = Spieleranzahl;
@@ -134,4 +134,5 @@ namespace Halli_Galli
             Karten = Kartenliste;
         }
     }
+
 }

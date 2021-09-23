@@ -36,7 +36,7 @@ namespace Halli_Galli
         {
             _graphics.PreferredBackBufferWidth = 1920;
             _graphics.PreferredBackBufferHeight = 1080;
-            _graphics.IsFullScreen = true;
+           // _graphics.IsFullScreen = true;
             _graphics.ApplyChanges();
 
             base.Initialize();

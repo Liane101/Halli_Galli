@@ -18,7 +18,7 @@ namespace Halli_Galli.States
             var newGameButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(880, 480),
-                Text = "Spiel Staten"
+                Text = "Spiel Starten"
             };
 
             newGameButton.Click += NewGameButton_Click;
