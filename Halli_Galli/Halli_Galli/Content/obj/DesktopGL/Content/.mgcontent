@@ -4,40 +4,40 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/File.spritefont</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/Fonts/File.spritefont</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/Fonts/Font.spritefont</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Banane_1.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Banane_2.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Banane_4.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Banane_5.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Button.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_1.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_2.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_3.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_4.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_5.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_x4.jpg</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 1.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 2.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 3.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Karten_Ruckseite.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Klingel.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Leertaste.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Limette_1.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Limette_2.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Limette_3.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Limette_4.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Limette_5.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Pflaume_1.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Pflaume_2.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Pflaume_3.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Pflaume_4.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Pflaume_5.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Schatten.png</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Tisch.jpg</File>
-    <File>C:/Users/bib/Source/Repos/Halli_Galli/Halli_Galli/Halli_Galli/Content/img/Tisch1.jpg</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/File.spritefont</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/Fonts/File.spritefont</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/Fonts/Font.spritefont</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Banane_1.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Banane_2.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Banane_4.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Banane_5.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Button.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Erdbeere_1.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Erdbeere_2.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Erdbeere_3.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Erdbeere_4.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Erdbeere_5.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Erdbeere_x4.jpg</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 1.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 2.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 3.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Karten_Ruckseite.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Klingel.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Leertaste.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Limette_1.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Limette_2.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Limette_3.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Limette_4.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Limette_5.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Pflaume_1.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Pflaume_2.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Pflaume_3.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Pflaume_4.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Pflaume_5.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Schatten.png</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Tisch.jpg</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli4/Halli_Galli/Halli_Galli/Content/img/Tisch1.jpg</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

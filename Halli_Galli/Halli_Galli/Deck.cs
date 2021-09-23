@@ -56,14 +56,6 @@ namespace Halli_Galli
             return deckcopy;
         }
 
-        public static void PrintDeck()
-        {
-            for (int i = 0; i < 56; i++)
-            {
-                Console.WriteLine($"{deck[i].Value} {deck[i].Fruit}");
-            }
-        }
-
         public static bool Check(List<Card> Tisch, int Spieleranzahl)
         {
             int pflaumen = 0;

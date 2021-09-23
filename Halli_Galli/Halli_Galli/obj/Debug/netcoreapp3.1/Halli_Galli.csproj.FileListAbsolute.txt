@@ -306,3 +306,12 @@ C:\Users\bib\Source\Repos\Halli_Galli\Halli_Galli\Halli_Galli\obj\Debug\netcorea
 C:\Users\bib\Source\Repos\Halli_Galli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache
 C:\Users\bib\Source\Repos\Halli_Galli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Fonts\Font.xnb
 C:\Users\bib\Source\Repos\Halli_Galli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Schatten.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Fonts\File.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Fonts\Font.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Button.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 1.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 2.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 3.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Leertaste.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Schatten.xnb
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Tisch1.xnb

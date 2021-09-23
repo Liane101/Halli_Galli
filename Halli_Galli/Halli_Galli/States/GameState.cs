@@ -116,11 +116,6 @@ namespace Halli_Galli.States
                 button4 = new Vector2(1415, 627);
             }
 
-
-
-
-
-
             var spieler1Button = new Button(buttonTexture, buttonFont)
             {
                 Position = button1,
@@ -194,20 +189,20 @@ namespace Halli_Galli.States
             {
                 if (player >= 2)
                 {
-                    Spieler[1].Karten.Insert(0, Spieler[2].Karten[0]);
+                    Spieler[2].Karten.Insert(0, Spieler[1].Karten[0]);
                     Spieler[1].Karten.RemoveAt(0);
                 }
 
 
                 if (player >= 3)
                 {
-                    Spieler[1].Karten.Insert(0, Spieler[3].Karten[0]);
+                    Spieler[3].Karten.Insert(0, Spieler[1].Karten[0]);
                     Spieler[1].Karten.RemoveAt(0);
                 }
 
                 if (player >= 4)
                 {
-                    Spieler[1].Karten.Insert(0, Spieler[0].Karten[0]);
+                    Spieler[0].Karten.Insert(0, Spieler[1].Karten[0]);
                     Spieler[1].Karten.RemoveAt(0);
                 }
             }
@@ -237,19 +232,19 @@ namespace Halli_Galli.States
             {
                 if (player >= 2)
                 {
-                    Spieler[2].Karten.Insert(0, Spieler[1].Karten[0]);
+                    Spieler[1].Karten.Insert(0, Spieler[2].Karten[0]);
                     Spieler[2].Karten.RemoveAt(0);
                 }
 
                 if (player >= 3)
                 {
-                    Spieler[2].Karten.Insert(0, Spieler[3].Karten[0]);
+                    Spieler[3].Karten.Insert(0, Spieler[2].Karten[0]);
                     Spieler[2].Karten.RemoveAt(0);
                 }
 
                 if (player >= 4)
                 {
-                    Spieler[2].Karten.Insert(0, Spieler[0].Karten[0]);
+                    Spieler[0].Karten.Insert(0, Spieler[2].Karten[0]);
                     Spieler[2].Karten.RemoveAt(0);
                 }
             }
@@ -282,16 +277,16 @@ namespace Halli_Galli.States
 
                 if (player >= 3)
                 {
-                    Spieler[3].Karten.Insert(0, Spieler[2].Karten[0]);
+                    Spieler[2].Karten.Insert(0, Spieler[3].Karten[0]);
                     Spieler[3].Karten.RemoveAt(0);
 
-                    Spieler[3].Karten.Insert(0, Spieler[1].Karten[0]);
+                    Spieler[1].Karten.Insert(0, Spieler[3].Karten[0]);
                     Spieler[3].Karten.RemoveAt(0);
                 }
 
                 if (player >= 4)
                 {
-                    Spieler[3].Karten.Insert(0, Spieler[0].Karten[0]);
+                    Spieler[0].Karten.Insert(0, Spieler[3].Karten[0]);
                     Spieler[3].Karten.RemoveAt(0);
                 }
             }
@@ -320,13 +315,13 @@ namespace Halli_Galli.States
             }
             else
             {
-                Spieler[0].Karten.Insert(0, Spieler[1].Karten[0]);
+                Spieler[1].Karten.Insert(0, Spieler[0].Karten[0]);
                 Spieler[0].Karten.RemoveAt(0);
 
-                Spieler[0].Karten.Insert(0, Spieler[2].Karten[0]);
+                Spieler[2].Karten.Insert(0, Spieler[0].Karten[0]);
                 Spieler[0].Karten.RemoveAt(0);
 
-                Spieler[0].Karten.Insert(0, Spieler[3].Karten[0]);
+                Spieler[3].Karten.Insert(0, Spieler[0].Karten[0]);
                 Spieler[0].Karten.RemoveAt(0);
             }
             geklingelt = false;
