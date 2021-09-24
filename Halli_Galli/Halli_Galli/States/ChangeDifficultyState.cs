@@ -7,93 +7,95 @@ using Halli_Galli.Controls;
 
 namespace Halli_Galli.States
 {
-    public class MenuState : State
+    public class ChangeDifficultyState : State
     {
+        public static string schwierigkeit = "mittel";
+        public static int geschwindigkeit = 1000;
         private SpriteFont schrift;
-
         private List<Component> _components;
-        public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
+        public ChangeDifficultyState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
             schrift = _content.Load<SpriteFont>("Fonts/Font");
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
-            var startGameButton = new Button(buttonTexture, buttonFont)
+
+            var easyButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(880, 480),
-                Text = "Spiel Starten"
+                Text = "leicht"
             };
 
-            startGameButton.Click += NewGameButton_Click;
+            easyButton.Click += EasyButton_Click;
 
-            var helpButton = new Button(buttonTexture, buttonFont)
+            var middleButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(880, 530),
-                Text = "Hilfe"
+                Text = "mittel"
             };
 
-            helpButton.Click += HelpButton_Click;
+            middleButton.Click += MiddleButton_Click;
 
-            var optionButton = new Button(buttonTexture, buttonFont)
+            var hardButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(880, 580),
-                Text = "Optionen"
+                Text = "schwer"
             };
 
-            optionButton.Click += OptionButton_Click;
+            hardButton.Click += HardButton_Click;
 
-            var quitGameButton = new Button(buttonTexture, buttonFont)
+            var backButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(880, 630),
-                Text = "Exit"
+                Text = "Zurueck"
             };
 
-            quitGameButton.Click += QuitGameButton_Click;
+            backButton.Click += back_Click;
 
             _components = new List<Component>
             {
-                startGameButton,
-                helpButton,
-                optionButton,
-                quitGameButton
+                easyButton,
+                middleButton,
+                hardButton,
+                backButton
             };
         }
 
-
-        private void OptionButton_Click(object sender, EventArgs e)
+        private void back_Click(object sender, EventArgs e)
         {
             _game.ChangeState(new OptionState(_game, _graphicsDevice, _content));
         }
-        private void QuitGameButton_Click(object sender, EventArgs e)
+        private void HardButton_Click(object sender, EventArgs e)
         {
-            _game.Exit();
+            schwierigkeit = "schwer";
+            geschwindigkeit = 500;
         }
-        private void HelpButton_Click(object sender, EventArgs e)
+        private void MiddleButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new HelpState(_game, _graphicsDevice, _content));
+            schwierigkeit = "mittel";
+            geschwindigkeit = 1000;
         }
-
-        private void NewGameButton_Click(object sender, EventArgs e)
+        private void EasyButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new ChoosePlayerState(_game, _graphicsDevice, _content));
+            schwierigkeit = "leicht";
+            geschwindigkeit = 1500;
         }
-
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
+            spriteBatch.DrawString(schrift, "Aktuelle Schwierigkeit: " + schwierigkeit, new Vector2(1350, 980), Color.White);
 
             foreach (var item in _components)
             {
                 item.Draw(gameTime, spriteBatch);
             }
-            spriteBatch.DrawString(schrift, "Aktuelle Schwierigkeit: " + ChangeDifficultyState.schwierigkeit, new Vector2(1350, 980), Color.White);
 
             spriteBatch.End();
         }
 
         public override void PostUpdate(GameTime gameTime)
         {
-            //Remove
+
         }
 
         public override void Update(GameTime gameTime)

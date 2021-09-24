@@ -3,46 +3,45 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Halli_Galli.Controls;
 
 namespace Halli_Galli.States
 {
-    public class ChoosePlayerState : State
+    class OptionState : State
     {
-        private SpriteFont schrift;
-        public static int player;
         private List<Component> _components;
-
-        public ChoosePlayerState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
+        public static bool screen;
+        private SpriteFont schrift;
+        public OptionState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
             schrift = _content.Load<SpriteFont>("Fonts/Font");
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
-            var spieler2Button = new Button(buttonTexture, buttonFont)
+
+            var difficultyButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(880, 480),
-                Text = "2 Spieler"
+                Text = "Schwierigkeit"
             };
 
-            spieler2Button.Click += Spieler2_Click;
+            difficultyButton.Click += DifficultyButton_Click;
 
-            var spieler3Button = new Button(buttonTexture, buttonFont)
+            var fullScreenTrueButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(880, 530),
-                Text = "3 Spieler"
+                Text = "Vollbild: ein"
             };
 
-            spieler3Button.Click += Spieler3_Click;
+            fullScreenTrueButton.Click += FullScreenTrueButton_Click;
 
-            var spieler4Button = new Button(buttonTexture, buttonFont)
+            var fullScreenFalseButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(880, 580),
-                Text = "4 Spieler"
+                Text = "Vollbild: aus"
             };
 
-            spieler4Button.Click += Spieler4_Click;
+            fullScreenFalseButton.Click += FullScreenFalseButton_Click;
 
             var backButton = new Button(buttonTexture, buttonFont)
             {
@@ -54,9 +53,9 @@ namespace Halli_Galli.States
 
             _components = new List<Component>
             {
-                spieler2Button,
-                spieler3Button,
-                spieler4Button,
+                difficultyButton,
+                fullScreenTrueButton,
+                fullScreenFalseButton,
                 backButton
             };
         }
@@ -65,23 +64,23 @@ namespace Halli_Galli.States
         {
             _game.ChangeState(new MenuState(_game, _graphicsDevice, _content));
         }
-        private void Spieler2_Click(object sender, EventArgs e)
-        {
-            GameState.Spieleranzahl = 2;
-            _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
-        }
-        private void Spieler3_Click(object sender, EventArgs e)
-        {
-            GameState.Spieleranzahl = 3;
-            _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
-        }
 
-        private void Spieler4_Click(object sender, EventArgs e)
+        private void FullScreenFalseButton_Click(object sender, EventArgs e)
         {
-            GameState.Spieleranzahl = 4;
-            _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
+            screen = false;
+            Game1.change = true;
+            _game.ChangeState(new OptionState(_game, _graphicsDevice, _content));
         }
-
+        private void FullScreenTrueButton_Click(object sender, EventArgs e)
+        {
+            screen = true;
+            Game1.change = true;
+            _game.ChangeState(new OptionState(_game, _graphicsDevice, _content));
+        }
+        private void DifficultyButton_Click(object sender, EventArgs e)
+        {
+            _game.ChangeState(new ChangeDifficultyState(_game, _graphicsDevice, _content));
+        }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();

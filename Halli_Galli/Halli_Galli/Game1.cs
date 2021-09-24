@@ -17,7 +17,7 @@ namespace Halli_Galli
         private State _currentState;
         private State _nextState;
         public static int player;
-
+        public static bool change = false;
 
         public void ChangeState(State state)
         {
@@ -34,7 +34,7 @@ namespace Halli_Galli
         {
             _graphics.PreferredBackBufferWidth = 1920;
             _graphics.PreferredBackBufferHeight = 1080;
-           // _graphics.IsFullScreen = true;
+            _graphics.IsFullScreen = OptionState.screen;
             _graphics.ApplyChanges();
 
             base.Initialize();
@@ -63,6 +63,12 @@ namespace Halli_Galli
             _currentState.Update(gameTime);
 
             _currentState.PostUpdate(gameTime);
+
+            if (change)
+            {
+                Initialize();
+                change = false;
+            }
 
             base.Update(gameTime);
         }
