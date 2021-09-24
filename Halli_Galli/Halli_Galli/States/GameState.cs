@@ -1,10 +1,8 @@
-﻿using Halli_Galli.States;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using Microsoft.Xna.Framework.Content;
 using Halli_Galli.Controls;
 
@@ -34,18 +32,17 @@ namespace Halli_Galli.States
         private Texture2D pflaume_3;
         private Texture2D pflaume_4;
         private Texture2D pflaume_5;
-        private SpriteFont font;
-        public static int player;
-        public Player[] Spieler = new Player[player];
-        private int counter;
-        public int player1;
-        public int player2;
-        public int player3;
-        public int player4;
-        private static readonly TimeSpan intervalBetweenAttack = TimeSpan.FromMilliseconds(500);
-        private TimeSpan lastTimeAttack;
+        private SpriteFont kleine_Schrift;
+        public static int Spieleranzahl;
+        public Player[] Spieler = new Player[Spieleranzahl];
+        public int Aktive_Karte1;
+        public int Aktive_Karte2;
+        public int Aktive_Karte3;
+        public int Aktive_Karte4;
+        private static readonly TimeSpan zeit_zwischen_Austeilen = TimeSpan.FromMilliseconds(500);
+        private TimeSpan letze_Austeilung;
         public int runde;
-        public int rundeKarten;
+        public int derzeitiger_Spieler;
         private bool geklingelt = false;
         public bool start = true;
         public bool nextCard = false;
@@ -58,7 +55,7 @@ namespace Halli_Galli.States
         private Vector2 button2;
         private Vector2 button3;
         private Vector2 button4;
-        private SpriteFont font1;
+        private SpriteFont Schrift_Groß;
         private Texture2D Schatten;
 
 
@@ -87,28 +84,28 @@ namespace Halli_Galli.States
             pflaume_3 = _content.Load<Texture2D>("img/Pflaume_3");
             pflaume_4 = _content.Load<Texture2D>("img/Pflaume_4");
             pflaume_5 = _content.Load<Texture2D>("img/Pflaume_5");
-            font = _content.Load<SpriteFont>("File");
+            kleine_Schrift = _content.Load<SpriteFont>("File");
             leertaste = _content.Load<Texture2D>("img/Leertaste");
-            font1 = _content.Load<SpriteFont>("Fonts/Font");
+            Schrift_Groß = _content.Load<SpriteFont>("Fonts/Font");
             Schatten = _content.Load<Texture2D>("img/Schatten");
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
 
-            if (player == 2)
+            if (Spieleranzahl == 2)
             {
                 button1 = new Vector2(275, 410);
                 button2 = new Vector2(1490, 627);
             }
 
-            if (player == 3)
+            if (Spieleranzahl == 3)
             {
                 button1 = new Vector2(342, 620);
                 button2 = new Vector2(880, 323);
                 button3 = new Vector2(1420, 620);
             }
 
-            if (player == 4)
+            if (Spieleranzahl == 4)
             {
                 button1 = new Vector2(350, 627);
                 button2 = new Vector2(350, 415);
@@ -167,7 +164,7 @@ namespace Halli_Galli.States
 
         private void Spieler1_Click(object sender, EventArgs e)
         {
-            if (Deck.Check(Tisch, player))
+            if (Deck.Check(Tisch, Spieleranzahl))
             {
                 int count = Tisch.Count;
 
@@ -178,29 +175,29 @@ namespace Halli_Galli.States
                 }
                 
                 runde = 0;
-                rundeKarten = 0;
+                derzeitiger_Spieler = 0;
 
-                player1 = 0;
-                player2 = 0;
-                player3 = 0;
-                player4 = 0;
+                Aktive_Karte1 = 0;
+                Aktive_Karte2 = 0;
+                Aktive_Karte3 = 0;
+                Aktive_Karte4 = 0;
             }
             else
             {
-                if (player >= 2)
+                if (Spieleranzahl >= 2)
                 {
                     Spieler[2].Karten.Insert(0, Spieler[1].Karten[0]);
                     Spieler[1].Karten.RemoveAt(0);
                 }
 
 
-                if (player >= 3)
+                if (Spieleranzahl >= 3)
                 {
                     Spieler[3].Karten.Insert(0, Spieler[1].Karten[0]);
                     Spieler[1].Karten.RemoveAt(0);
                 }
 
-                if (player >= 4)
+                if (Spieleranzahl >= 4)
                 {
                     Spieler[0].Karten.Insert(0, Spieler[1].Karten[0]);
                     Spieler[1].Karten.RemoveAt(0);
@@ -210,7 +207,7 @@ namespace Halli_Galli.States
         }
         private void Spieler2_Click(object sender, EventArgs e)
         {
-            if (Deck.Check(Tisch, player))
+            if (Deck.Check(Tisch, Spieleranzahl))
             {
                 int count = Tisch.Count;
 
@@ -221,28 +218,28 @@ namespace Halli_Galli.States
                 }
                 
                 runde = 0;
-                rundeKarten = 0;
+                derzeitiger_Spieler = 0;
 
-                player1 = 0;
-                player2 = 0;
-                player3 = 0;
-                player4 = 0;
+                Aktive_Karte1 = 0;
+                Aktive_Karte2 = 0;
+                Aktive_Karte3 = 0;
+                Aktive_Karte4 = 0;
             }
             else
             {
-                if (player >= 2)
+                if (Spieleranzahl >= 2)
                 {
                     Spieler[1].Karten.Insert(0, Spieler[2].Karten[0]);
                     Spieler[2].Karten.RemoveAt(0);
                 }
 
-                if (player >= 3)
+                if (Spieleranzahl >= 3)
                 {
                     Spieler[3].Karten.Insert(0, Spieler[2].Karten[0]);
                     Spieler[2].Karten.RemoveAt(0);
                 }
 
-                if (player >= 4)
+                if (Spieleranzahl >= 4)
                 {
                     Spieler[0].Karten.Insert(0, Spieler[2].Karten[0]);
                     Spieler[2].Karten.RemoveAt(0);
@@ -252,7 +249,7 @@ namespace Halli_Galli.States
         }
         private void Spieler3_Click(object sender, EventArgs e)
         {
-            if (Deck.Check(Tisch, player))
+            if (Deck.Check(Tisch, Spieleranzahl))
             {
                 int count = Tisch.Count;
 
@@ -263,19 +260,19 @@ namespace Halli_Galli.States
                 }
                
                 runde = 0;
-                rundeKarten = 0;
+                derzeitiger_Spieler = 0;
 
-                player1 = 0;
-                player2 = 0;
-                player3 = 0;
-                player4 = 0;
+                Aktive_Karte1 = 0;
+                Aktive_Karte2 = 0;
+                Aktive_Karte3 = 0;
+                Aktive_Karte4 = 0;
             }
             else
             {
 
                     
 
-                if (player >= 3)
+                if (Spieleranzahl >= 3)
                 {
                     Spieler[2].Karten.Insert(0, Spieler[3].Karten[0]);
                     Spieler[3].Karten.RemoveAt(0);
@@ -284,7 +281,7 @@ namespace Halli_Galli.States
                     Spieler[3].Karten.RemoveAt(0);
                 }
 
-                if (player >= 4)
+                if (Spieleranzahl >= 4)
                 {
                     Spieler[0].Karten.Insert(0, Spieler[3].Karten[0]);
                     Spieler[3].Karten.RemoveAt(0);
@@ -295,7 +292,7 @@ namespace Halli_Galli.States
 
         private void Spieler4_Click(object sender, EventArgs e)
         {
-            if (Deck.Check(Tisch, player))
+            if (Deck.Check(Tisch, Spieleranzahl))
             {
                 int count = Tisch.Count;
 
@@ -306,12 +303,12 @@ namespace Halli_Galli.States
                 }
                
                 runde = 0;
-                rundeKarten = 0;
+                derzeitiger_Spieler = 0;
 
-                player1 = 0;
-                player2 = 0;
-                player3 = 0;
-                player4 = 0;
+                Aktive_Karte1 = 0;
+                Aktive_Karte2 = 0;
+                Aktive_Karte3 = 0;
+                Aktive_Karte4 = 0;
             }
             else
             {
@@ -329,9 +326,9 @@ namespace Halli_Galli.States
         public override void Update(GameTime gameTime)
         {
 
-            if (lastTimeAttack + intervalBetweenAttack < gameTime.TotalGameTime)
+            if (letze_Austeilung + zeit_zwischen_Austeilen < gameTime.TotalGameTime)
             {
-                lastTimeAttack = gameTime.TotalGameTime;
+                letze_Austeilung = gameTime.TotalGameTime;
                 nextCard = true;
             }
                 
@@ -400,9 +397,9 @@ namespace Halli_Galli.States
                 {
                     List<Card> Kartenliste = new List<Card>();
 
-                    for (int k = 0; k < deck.Length / player; k++)
+                    for (int k = 0; k < deck.Length / Spieleranzahl; k++)
                     {
-                        Kartenliste.Add(deck[k + (deck.Length / player * i)]);
+                        Kartenliste.Add(deck[k + (deck.Length / Spieleranzahl * i)]);
                     }
                     Spieler[i] = new Player(Kartenliste);
                 }
@@ -410,18 +407,18 @@ namespace Halli_Galli.States
                 start = false;
             }
 
-            if (player == 2)
+            if (Spieleranzahl == 2)
             {
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 540 + 190), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 540 - 190), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
             }
-            else if (player == 3)
+            else if (Spieleranzahl == 3)
             {
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 2, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
             }
-            else if (player == 4)
+            else if (Spieleranzahl == 4)
             {
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
@@ -431,68 +428,68 @@ namespace Halli_Galli.States
 
 
 
-            if (player == 2)
+            if (Spieleranzahl == 2)
             {
                 if (runde > 0)
-                    spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4, 540), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte1], new Vector2(1920 / 4, 540), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
 
                 if (runde > 1)
-                    spriteBatch.Draw(Früchte[player2], new Vector2(1920 * 3 / 4, 540), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte2], new Vector2(1920 * 3 / 4, 540), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
 
                 spriteBatch.Draw(Schatten, new Vector2(340 - 22, 705 - 25), Color.White);
                 spriteBatch.Draw(Schatten, new Vector2(1560 - 22, 325 -25), Color.White);
 
 
 
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[1].Karten.Count), new Vector2(340 + 17 - font.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 705), Color.Black);
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[0].Karten.Count), new Vector2(1560 + 17 - font.MeasureString(Convert.ToString(Spieler[0].Karten.Count)).X, 325), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[1].Karten.Count), new Vector2(340 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 705), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[0].Karten.Count), new Vector2(1560 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[0].Karten.Count)).X, 325), Color.Black);
             }
-            else if (player == 3)
+            else if (Spieleranzahl == 3)
             {
                 if (runde > 0)
-                    spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4 + 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte1], new Vector2(1920 / 4 + 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
 
                 if (runde > 2)
-                    spriteBatch.Draw(Früchte[player3], new Vector2(1920 * 3 / 4 - 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte3], new Vector2(1920 * 3 / 4 - 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
 
                 if (runde > 1)
-                    spriteBatch.Draw(Früchte[player2], new Vector2(1920 / 2 - 170, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte2], new Vector2(1920 / 2 - 170, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
 
                 spriteBatch.Draw(Schatten, new Vector2(390 - 22, 780 - 25), Color.White);
                 spriteBatch.Draw(Schatten, new Vector2(950 - 22, 170 - 25), Color.White);
                 spriteBatch.Draw(Schatten, new Vector2(1520 - 22, 780 - 25), Color.White);
 
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[1].Karten.Count), new Vector2(390 + 17 - font.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 780), Color.Black);
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[2].Karten.Count), new Vector2(950 + 17 - font.MeasureString(Convert.ToString(Spieler[2].Karten.Count)).X, 170), Color.Black);
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[0].Karten.Count), new Vector2(1520 + 17 - font.MeasureString(Convert.ToString(Spieler[0].Karten.Count)).X, 780), Color.Black);
-
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[1].Karten.Count), new Vector2(390 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 780), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[2].Karten.Count), new Vector2(950 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[2].Karten.Count)).X, 170), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[0].Karten.Count), new Vector2(1520 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[0].Karten.Count)).X, 780), Color.Black);
             }
-            else if (player == 4)
+
+            else if (Spieleranzahl == 4)
             {
                 if (runde > 0)
-                    spriteBatch.Draw(Früchte[player1], new Vector2(1920 / 4 + 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte1], new Vector2(1920 / 4 + 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
 
                 if (runde > 3)
-                    spriteBatch.Draw(Früchte[player4], new Vector2(1920 * 3 / 4 - 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte4], new Vector2(1920 * 3 / 4 - 120, 1080 * 2 / 3 + 120), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
 
                 if (runde > 1)
-                    spriteBatch.Draw(Früchte[player2], new Vector2(1920 / 4 + 120, 1080 / 3 - 120), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte2], new Vector2(1920 / 4 + 120, 1080 / 3 - 120), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
 
                 if (runde > 2)
-                    spriteBatch.Draw(Früchte[player3], new Vector2(1920 * 3 / 4 - 120, 1080 / 3 - 120), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+                    spriteBatch.Draw(Früchte[Aktive_Karte3], new Vector2(1920 * 3 / 4 - 120, 1080 / 3 - 120), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
 
                 spriteBatch.Draw(Schatten, new Vector2(390 - 22, 780 - 25), Color.White);
                 spriteBatch.Draw(Schatten, new Vector2(390 - 22, 250 - 25), Color.White);
                 spriteBatch.Draw(Schatten, new Vector2(1520 - 22, 250 - 25), Color.White);
                 spriteBatch.Draw(Schatten, new Vector2(1520 - 22, 780 - 25), Color.White);
 
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[1].Karten.Count), new Vector2(390 + 17 - font.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 780), Color.Black);
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[2].Karten.Count), new Vector2(390 + 17 - font.MeasureString(Convert.ToString(Spieler[2].Karten.Count)).X, 250), Color.Black);
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[3].Karten.Count), new Vector2(1520 + 17 - font.MeasureString(Convert.ToString(Spieler[3].Karten.Count)).X, 250), Color.Black);
-                spriteBatch.DrawString(font1, Convert.ToString(Spieler[0].Karten.Count), new Vector2(1520 + 17 - font.MeasureString(Convert.ToString(Spieler[0].Karten.Count)).X, 780), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[1].Karten.Count), new Vector2(390 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 780), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[2].Karten.Count), new Vector2(390 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[2].Karten.Count)).X, 250), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[3].Karten.Count), new Vector2(1520 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[3].Karten.Count)).X, 250), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[0].Karten.Count), new Vector2(1520 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[0].Karten.Count)).X, 780), Color.Black);
             }
-
-            spriteBatch.DrawString(font, "" + Tisch.Count, new Vector2(900, 500), Color.Black);
+            
+            spriteBatch.DrawString(kleine_Schrift, "" + Tisch.Count, new Vector2(900, 500), Color.Black);
 
             if (geklingelt == false)
             {
@@ -500,7 +497,7 @@ namespace Halli_Galli.States
                 if (nextCard)
                 {
                     runde++;
-                    rundeKarten++;
+                    derzeitiger_Spieler++;
                 }
 
 
@@ -512,62 +509,70 @@ namespace Halli_Galli.States
                 {
                     if (runde > 0)
                     {
-                        Tisch.Insert(rundeKarten - 1, Spieler[runde % player].Karten[0]);
-                        Spieler[runde % player].Karten.RemoveAt(0);
+                        Tisch.Insert(derzeitiger_Spieler - 1, Spieler[derzeitiger_Spieler - 1].Karten[0]);
+                        Spieler[derzeitiger_Spieler - 1].Karten.RemoveAt(0);
                     }
 
-                    if (player >= 2 && rundeKarten > 0)
+                    if (Spieleranzahl >= 2 && derzeitiger_Spieler > 0)
                     {
-                        player1 = 0;
-                        player1 += Tisch[0].Value - 1;
+                        Aktive_Karte1 = 0;
+                        Aktive_Karte1 += Tisch[0].Value - 1;
 
                         if (Tisch[0].Fruit == "Erdbeere")
-                            player1 += 5;
-                        if (Tisch[0].Fruit == "Limette")
-                            player1 += 10;
-                        if (Tisch[0].Fruit == "Pflaume")
-                            player1 += 15;
+                            Aktive_Karte1 += 5;
 
-                        if (rundeKarten > 1)
+                        else if (Tisch[0].Fruit == "Limette")
+                            Aktive_Karte1 += 10;
+
+                        else if (Tisch[0].Fruit == "Pflaume")
+                            Aktive_Karte1 += 15;
+
+                        if (derzeitiger_Spieler > 1)
                         {
-                            player2 = 0;
-                            player2 += Tisch[0].Value - 1;
+                            Aktive_Karte2 = 0;
+                            Aktive_Karte2 += Tisch[1].Value - 1;
 
                             if (Tisch[1].Fruit == "Erdbeere")
-                                player2 += 5;
-                            if (Tisch[1].Fruit == "Limette")
-                                player2 += 10;
-                            if (Tisch[1].Fruit == "Pflaume")
-                                player2 += 15;
+                                Aktive_Karte2 += 5;
+
+                            else if (Tisch[1].Fruit == "Limette")
+                                Aktive_Karte2 += 10;
+
+                            else if (Tisch[1].Fruit == "Pflaume")
+                                Aktive_Karte2 += 15;
                         }
                     }
-                    if (player >= 3 && rundeKarten > 2)
+                    if (Spieleranzahl >= 3 && derzeitiger_Spieler > 2)
                     {
-                        player3 = 0;
-                        player3 += Tisch[2].Value - 1;
+                        Aktive_Karte3 = 0;
+                        Aktive_Karte3 += Tisch[2].Value - 1;
 
                         if (Tisch[2].Fruit == "Erdbeere")
-                            player3 += 5;
-                        if (Tisch[2].Fruit == "Limette")
-                            player3 += 10;
-                        if (Tisch[2].Fruit == "Pflaume")
-                            player3 += 15;
+                            Aktive_Karte3 += 5;
+
+                        else if (Tisch[2].Fruit == "Limette")
+                            Aktive_Karte3 += 10;
+
+                        else if (Tisch[2].Fruit == "Pflaume")
+                            Aktive_Karte3 += 15;
                     }
-                    if (player >= 4 && rundeKarten > 3)
+                    if (Spieleranzahl >= 4 && derzeitiger_Spieler > 3)
                     {
-                        player4 = 0;
-                        player4 += Tisch[3].Value - 1;
+                        Aktive_Karte4 = 0;
+                        Aktive_Karte4 += Tisch[3].Value - 1;
 
                         if (Tisch[3].Fruit == "Erdbeere")
-                            player4 += 5;
-                        if (Tisch[3].Fruit == "Limette")
-                            player4 += 10;
-                        if (Tisch[3].Fruit == "Pflaume")
-                            player4 += 15;
+                            Aktive_Karte4 += 5;
+
+                        else if (Tisch[3].Fruit == "Limette")
+                            Aktive_Karte4 += 10;
+
+                        else if (Tisch[3].Fruit == "Pflaume")
+                            Aktive_Karte4 += 15;
                     }
 
-                    if (rundeKarten == player)
-                        rundeKarten = 0;
+                    if (derzeitiger_Spieler == Spieleranzahl)
+                        derzeitiger_Spieler = 0;
 
                     nextCard = false;
                 }
@@ -575,19 +580,19 @@ namespace Halli_Galli.States
             else {
                 spriteBatch.Draw(leertaste, new Vector2(234, 30), Color.White);
 
-                if(player >= 2)
+                if(Spieleranzahl >= 2)
                 foreach (var item in _Buttons12)
                 {
                     item.Draw(gameTime, spriteBatch);
                 }
 
-                if (player >= 3)
+                if (Spieleranzahl >= 3)
                     foreach (var item in _Button3)
                     {
                         item.Draw(gameTime, spriteBatch);
                     }
 
-                if (player >= 4)
+                if (Spieleranzahl >= 4)
                     foreach (var item in _Button4)
                     {
                         item.Draw(gameTime, spriteBatch);

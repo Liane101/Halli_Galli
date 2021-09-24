@@ -64,18 +64,18 @@ namespace Halli_Galli.States
         }
         private void Spieler2_Click(object sender, EventArgs e)
         {
-            GameState.player = 2;
+            GameState.Spieleranzahl = 2;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
         private void Spieler3_Click(object sender, EventArgs e)
         {
-            GameState.player = 3;
+            GameState.Spieleranzahl = 3;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
 
         private void Spieler4_Click(object sender, EventArgs e)
         {
-            GameState.player = 4;
+            GameState.Spieleranzahl = 4;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
 

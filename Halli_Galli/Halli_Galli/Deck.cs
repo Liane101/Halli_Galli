@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Halli_Galli
 {
@@ -63,7 +62,7 @@ namespace Halli_Galli
             int erdbeeren = 0;
             int bananen = 0;
 
-            int bereich = 0;
+            int bereich;
 
             if (Tisch.Count > Spieleranzahl)
                 bereich = Spieleranzahl;
