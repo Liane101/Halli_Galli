@@ -32,6 +32,7 @@ namespace Halli_Galli.States
         private Texture2D pflaume_3;
         private Texture2D pflaume_4;
         private Texture2D pflaume_5;
+        private Texture2D ausgeschieden;
         private SpriteFont kleine_Schrift;
         public static int Spieleranzahl;
         public Player[] Spieler = new Player[Spieleranzahl];
@@ -45,9 +46,11 @@ namespace Halli_Galli.States
         public int derzeitiger_Spieler;
         private bool geklingelt = false;
         public bool start = true;
+        public bool wait = false;
         public bool nextCard = false;
         private List<Card> Tisch = new List<Card>();
-        private List<Component> _Buttons12;
+        private List<Component> _Button1;
+        private List<Component> _Button2;
         private List<Component> _Button3;
         private List<Component> _Button4;
         private Texture2D leertaste;
@@ -88,6 +91,7 @@ namespace Halli_Galli.States
             leertaste = _content.Load<Texture2D>("img/Leertaste");
             Schrift_Groß = _content.Load<SpriteFont>("Fonts/Font");
             Schatten = _content.Load<Texture2D>("img/Schatten");
+            ausgeschieden = _content.Load<Texture2D>("img/0_Karten_Ausgeschieden");
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
@@ -145,9 +149,12 @@ namespace Halli_Galli.States
 
             spieler4Button.Click += Spieler4_Click;
 
-            _Buttons12 = new List<Component>
+            _Button1 = new List<Component>
             {
                 spieler1Button,
+            };
+            _Button2 = new List<Component>
+            {
                 spieler2Button,
             };
             _Button3 = new List<Component>
@@ -202,28 +209,39 @@ namespace Halli_Galli.States
             }
             else
             {
-                if (Spieler_click != 0)
+                if (Spieler[Spieler_click].Karten.Count < 3)
                 {
-                    Spieler[0].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
-                    Spieler[Spieler_click].Karten.RemoveAt(0);
+                    for (int i = 0; i < Spieler[Spieler_click].Karten.Count; i++)
+                    {
+                        Tisch.Insert(Tisch.Count, Spieler[Spieler_click].Karten[i]);
+                        Spieler[Spieler_click].Karten.RemoveAt(i);
+                    }
                 }
-
-                if (Spieleranzahl >= 2 && Spieler_click != 1)
+                else
                 {
-                    Spieler[1].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
-                    Spieler[Spieler_click].Karten.RemoveAt(0);
-                }
+                    if (Spieler_click != 0)
+                    {
+                        Spieler[0].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
+                        Spieler[Spieler_click].Karten.RemoveAt(0);
+                    }
 
-                if (Spieleranzahl >= 3 && Spieler_click != 2)
-                {
-                    Spieler[2].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
-                    Spieler[Spieler_click].Karten.RemoveAt(0);
-                }
+                    if (Spieleranzahl >= 2 && Spieler_click != 1)
+                    {
+                        Spieler[1].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
+                        Spieler[Spieler_click].Karten.RemoveAt(0);
+                    }
 
-                if (Spieleranzahl >= 4 && Spieler_click != 3)
-                {
-                    Spieler[3].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
-                    Spieler[Spieler_click].Karten.RemoveAt(0);
+                    if (Spieleranzahl >= 3 && Spieler_click != 2)
+                    {
+                        Spieler[2].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
+                        Spieler[Spieler_click].Karten.RemoveAt(0);
+                    }
+
+                    if (Spieleranzahl >= 4 && Spieler_click != 3)
+                    {
+                        Spieler[3].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
+                        Spieler[Spieler_click].Karten.RemoveAt(0);
+                    }
                 }
             }
             geklingelt = false;
@@ -231,6 +249,7 @@ namespace Halli_Galli.States
 
         public override void Update(GameTime gameTime)
         {
+
 
             if (letze_Austeilung + zeit_zwischen_Austeilen < gameTime.TotalGameTime)
             {
@@ -242,13 +261,19 @@ namespace Halli_Galli.States
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
                 geklingelt = true;
 
-            foreach (var item in _Buttons12)
+            
+                foreach (var item in _Button1)
+                    item.Update(gameTime);
+
+
+                foreach (var item in _Button2)
                 item.Update(gameTime);
 
-            foreach (var item in _Button3)
+
+                foreach (var item in _Button3)
                 item.Update(gameTime);
 
-            foreach (var item in _Button4)
+                foreach (var item in _Button4)
                 item.Update(gameTime);
             //base.Update(gameTime);
         }
@@ -280,7 +305,8 @@ namespace Halli_Galli.States
                                     pflaume_2,
                                     pflaume_3,
                                     pflaume_4,
-                                    pflaume_5
+                                    pflaume_5,
+                                    ausgeschieden
             };
 
 
@@ -324,6 +350,26 @@ namespace Halli_Galli.States
 
                 if (nextCard)
                 {
+                    if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
+                    {
+
+
+                        if (Tisch.Count < derzeitiger_Spieler)
+                        {
+                            Card platzhalter = new Card(0, "Platzhalter");
+                            Tisch.Insert(derzeitiger_Spieler - 1, platzhalter);
+                        }
+
+
+                        if (derzeitiger_Spieler == 4)
+                            derzeitiger_Spieler = 0;
+                        else
+                            derzeitiger_Spieler++;
+
+
+
+                    }
+
 
                     if (runde > 4)
                     {
@@ -348,6 +394,9 @@ namespace Halli_Galli.States
                         else if (Tisch[0].Fruit == "Pflaume")
                             Aktive_Karte1 += 15;
 
+                        else if (Tisch[0].Fruit == "Platzhalter")
+                            Aktive_Karte2 += 21;
+
                         if (derzeitiger_Spieler > 1)
                         {
                             Aktive_Karte2 = 0;
@@ -361,6 +410,9 @@ namespace Halli_Galli.States
 
                             else if (Tisch[1].Fruit == "Pflaume")
                                 Aktive_Karte2 += 15;
+
+                            else if (Tisch[1].Fruit == "Platzhalter")
+                                Aktive_Karte2 += 21;
                         }
                     }
                     if (Spieleranzahl >= 3 && derzeitiger_Spieler > 2)
@@ -376,6 +428,9 @@ namespace Halli_Galli.States
 
                         else if (Tisch[2].Fruit == "Pflaume")
                             Aktive_Karte3 += 15;
+
+                        else if (Tisch[2].Fruit == "Platzhalter")
+                            Aktive_Karte2 += 21;
                     }
                     if (Spieleranzahl >= 4 && derzeitiger_Spieler > 3)
                     {
@@ -390,6 +445,9 @@ namespace Halli_Galli.States
 
                         else if (Tisch[3].Fruit == "Pflaume")
                             Aktive_Karte4 += 15;
+
+                        else if (Tisch[3].Fruit == "Platzhalter")
+                            Aktive_Karte2 += 21;
                     }
 
                     if (derzeitiger_Spieler == Spieleranzahl)
@@ -398,28 +456,7 @@ namespace Halli_Galli.States
                     nextCard = false;
                 }
             }
-            else
-            {
-                spriteBatch.Draw(leertaste, new Vector2(234, 30), Color.White);
-
-                if (Spieleranzahl >= 2)
-                    foreach (var item in _Buttons12)
-                    {
-                        item.Draw(gameTime, spriteBatch);
-                    }
-
-                if (Spieleranzahl >= 3)
-                    foreach (var item in _Button3)
-                    {
-                        item.Draw(gameTime, spriteBatch);
-                    }
-
-                if (Spieleranzahl >= 4)
-                    foreach (var item in _Button4)
-                    {
-                        item.Draw(gameTime, spriteBatch);
-                    }
-            }
+            
 
 
             if (Spieleranzahl == 2)
@@ -507,7 +544,74 @@ namespace Halli_Galli.States
 
             spriteBatch.DrawString(kleine_Schrift, "" + Tisch.Count, new Vector2(900, 500), Color.Black);
 
-           
+           if(geklingelt == true)
+            {
+                spriteBatch.Draw(leertaste, new Vector2(234, 30), Color.White);
+
+                if (Spieleranzahl >= 2)
+                {
+
+                    if (Tisch.Count > 1)
+                    {
+                        if (Tisch[0].Fruit != "Platzhalter")
+                            foreach (var item in _Button1)
+                            {
+                                item.Draw(gameTime, spriteBatch);
+                            }
+                    }
+                    else if (Spieler[0].Karten.Count != 0)
+                            foreach (var item in _Button1)
+                            {
+                                item.Draw(gameTime, spriteBatch);
+                            }
+
+
+                    if (Tisch.Count > 2)
+                    {
+                        if (Tisch[1].Fruit != "Platzhalter")
+                            foreach (var item in _Button2)
+                            {
+                                item.Draw(gameTime, spriteBatch);
+                            }
+                    }
+                    else if(Spieler[1].Karten.Count != 0)
+                            foreach (var item in _Button2)
+                            {
+                                item.Draw(gameTime, spriteBatch);
+                            }
+
+                }
+
+                if (Tisch.Count > 3)
+                {
+                    if (Tisch[2].Fruit != "Platzhalter")
+                        foreach (var item in _Button3)
+                        {
+                            item.Draw(gameTime, spriteBatch);
+                        }
+                }
+                else if (Spieler[2].Karten.Count != 0)
+                    foreach (var item in _Button3)
+                    {
+                        item.Draw(gameTime, spriteBatch);
+                    }
+
+
+                if (Tisch.Count > 4)
+                {
+                    if (Tisch[3].Fruit != "Platzhalter")
+                        foreach (var item in _Button4)
+                        {
+                            item.Draw(gameTime, spriteBatch);
+                        }
+                }
+                else if (Spieler[3].Karten.Count != 0)
+                    foreach (var item in _Button4)
+                    {
+                        item.Draw(gameTime, spriteBatch);
+                    }
+
+            }
 
             spriteBatch.End();
 

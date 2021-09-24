@@ -372,3 +372,4 @@ C:\Users\bib\Source\Repos\Halli_Galli2\Halli_Galli\Halli_Galli\obj\Debug\netcore
 C:\Users\bib\Source\Repos\Halli_Galli2\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.dll
 C:\Users\bib\Source\Repos\Halli_Galli2\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.pdb
 C:\Users\bib\Source\Repos\Halli_Galli2\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache
+C:\Users\bib\Source\Repos\Halli_Galli2\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\0_Karten_Ausgeschieden.xnb

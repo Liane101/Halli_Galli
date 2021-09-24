@@ -7,6 +7,7 @@
     <File>C:/Users/bib/Source/Repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/File.spritefont</File>
     <File>C:/Users/bib/Source/Repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/Fonts/File.spritefont</File>
     <File>C:/Users/bib/Source/Repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/Fonts/Font.spritefont</File>
+    <File>C:/Users/bib/Source/Repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/img/0_Karten_Ausgeschieden.png</File>
     <File>C:/Users/bib/Source/Repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/img/Banane_1.png</File>
     <File>C:/Users/bib/Source/Repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/img/Banane_2.png</File>
     <File>C:/Users/bib/Source/Repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</File>
@@ -40,6 +41,7 @@
     <File>C:/Users/bib/Source/Repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/img/Tisch1.jpg</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
