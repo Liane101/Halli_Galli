@@ -41,7 +41,7 @@ namespace Halli_Galli.States
         public int Aktive_Karte2;
         public int Aktive_Karte3;
         public int Aktive_Karte4;
-        private static readonly TimeSpan zeit_zwischen_Austeilen = TimeSpan.FromMilliseconds(700);
+        private static readonly TimeSpan zeit_zwischen_Austeilen = TimeSpan.FromMilliseconds(ChangeDifficultyState.geschwindigkeit);
         private TimeSpan letze_Austeilung;
         public int runde;
         public int derzeitiger_Spieler;
@@ -61,6 +61,9 @@ namespace Halli_Galli.States
         private Vector2 button4;
         private SpriteFont Schrift_Groß;
         private Texture2D Schatten;
+        private int[] Kartenzurueck = new int[4];
+
+
 
 
         public GameState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
@@ -455,12 +458,108 @@ namespace Halli_Galli.States
                 {
                     if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
                     {
+                        
+                            Kartenzurueck[derzeitiger_Spieler - 1]++;
+
+
+
                         if (derzeitiger_Spieler == 4)
                             derzeitiger_Spieler = 0;
                         else
                             derzeitiger_Spieler++;
+
+
                     }
 
+                    int AusetzendeSpieler = 0;
+                    for (int i = 0; i < Spieleranzahl; i++)
+                    {
+
+                        if (Spieler[i].Karten.Count == 0)
+                        {
+                            AusetzendeSpieler++;
+                        }
+                    }
+
+                    if (AusetzendeSpieler == Spieleranzahl)
+                    {
+                        Kartenzurueck[0] -= 1;
+
+                        int Tischanzahl = Tisch.Count;
+
+                        if (Spieleranzahl == 2)
+                        {
+                            for (int i = 0; i < Kartenzurueck[0]; i++)
+                            {
+                                Spieler[0].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+
+                            for (int i = 0; i < Kartenzurueck[1]; i++)
+                            {
+                                Spieler[1].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+
+                        }
+
+                        if (Spieleranzahl == 3)
+                        {
+                            for (int i = 0; i < Kartenzurueck[0]; i++)
+                            {
+                                Spieler[0].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+
+                            for (int i = 0; i < Kartenzurueck[1]; i++)
+                            {
+                                Spieler[1].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+
+                            for (int i = 0; i < Kartenzurueck[2]; i++)
+                            {
+                                Spieler[2].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+                        }
+
+                        if (Spieleranzahl == 4)
+                        {
+                            for (int i = 0; i < Kartenzurueck[0]; i++)
+                            {
+                                Spieler[0].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+
+                            for (int i = 0; i < Kartenzurueck[1]; i++)
+                            {
+                                Spieler[1].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+
+                            for (int i = 0; i < Kartenzurueck[2]; i++)
+                            {
+                                Spieler[2].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+
+                            for (int i = 0; i < Kartenzurueck[3]; i++)
+                            {
+                                Spieler[3].Karten.Insert(0, Tisch[0]);
+                                Tisch.RemoveAt(0);
+                            }
+                        }
+
+                        derzeitiger_Spieler = 1;
+                        runde = 0;
+
+                        for (int i = 0; i < Kartenzurueck.Length; i++)
+                        {
+                            Kartenzurueck[i] = 0;
+                        }
+
+                    }
 
                     if (runde > 4)
                     {
@@ -470,6 +569,9 @@ namespace Halli_Galli.States
 
                         Tisch.Insert(derzeitiger_Spieler - 1, Spieler[derzeitiger_Spieler - 1].Karten[0]);
                         Spieler[derzeitiger_Spieler - 1].Karten.RemoveAt(0);
+
+                    Kartenzurueck[derzeitiger_Spieler - 1]++;
+                        
 
                     if (Spieleranzahl >= 2 && derzeitiger_Spieler > 0)
                     {
