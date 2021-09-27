@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 using Halli_Galli.Controls;
+using Microsoft.Xna.Framework.Media;
 
 namespace Halli_Galli.States
 {
@@ -272,6 +273,78 @@ namespace Halli_Galli.States
                     Spieleranzahl--;
                 }
             }
+            if (Spieleranzahl == 2)
+            {
+                button1 = new Vector2(275, 410);
+                button2 = new Vector2(1490, 627);
+            }
+
+            if (Spieleranzahl == 3)
+            {
+                button1 = new Vector2(342, 620);
+                button2 = new Vector2(880, 323);
+                button3 = new Vector2(1420, 620);
+            }
+
+            if (Spieleranzahl == 4)
+            {
+                button1 = new Vector2(350, 627);
+                button2 = new Vector2(350, 415);
+                button3 = new Vector2(1415, 415);
+                button4 = new Vector2(1415, 627);
+            }
+
+            var buttonTexture = _content.Load<Texture2D>("img/Button");
+            var buttonFont = _content.Load<SpriteFont>("Fonts/File");
+
+            var spieler1Button = new Button(buttonTexture, buttonFont)
+            {
+                Position = button1,
+                Text = "Spieler 1"
+            };
+
+            spieler1Button.Click += Spieler1_Click;
+
+            var spieler2Button = new Button(buttonTexture, buttonFont)
+            {
+                Position = button2,
+                Text = "Spieler 2"
+            };
+
+            spieler2Button.Click += Spieler2_Click;
+
+            var spieler3Button = new Button(buttonTexture, buttonFont)
+            {
+                Position = button3,
+                Text = "Spieler 3"
+            };
+
+            spieler3Button.Click += Spieler3_Click;
+
+            var spieler4Button = new Button(buttonTexture, buttonFont)
+            {
+                Position = button4,
+                Text = "Spieler 4"
+            };
+
+            spieler4Button.Click += Spieler4_Click;
+
+            _Button1 = new List<Component>
+            {
+                spieler1Button,
+            };
+            _Button2 = new List<Component>
+            {
+                spieler2Button,
+            };
+            _Button3 = new List<Component>
+            {
+                spieler3Button,
+            };
+            _Button4 = new List<Component>
+            {
+                spieler4Button,
+            };
         }
 
         public override void Update(GameTime gameTime)
@@ -471,8 +544,6 @@ namespace Halli_Galli.States
                     nextCard = false;
                 }
             }
-            
-
 
             if (Spieleranzahl == 2)
             {
