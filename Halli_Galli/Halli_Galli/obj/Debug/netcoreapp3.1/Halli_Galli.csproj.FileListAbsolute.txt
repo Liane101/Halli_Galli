@@ -431,3 +431,4 @@ C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli7\Halli_Galli\Hall
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli7\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\soft_oal.dll
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli7\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.csproj.CopyComplete
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli7\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache
+C:\Users\bib\Source\Repos\Halli_Galli4\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\0_Karten_Ausgeschieden.xnb

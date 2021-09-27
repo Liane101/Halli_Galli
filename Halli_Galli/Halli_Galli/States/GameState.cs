@@ -187,6 +187,8 @@ namespace Halli_Galli.States
             SpielerX_Click(3);
         }
 
+
+
         public void SpielerX_Click(int Spieler_click)
         {
             if (Deck.Check(Tisch, Spieleranzahl))
@@ -216,6 +218,7 @@ namespace Halli_Galli.States
                         Tisch.Insert(Tisch.Count, Spieler[Spieler_click].Karten[i]);
                         Spieler[Spieler_click].Karten.RemoveAt(i);
                     }
+
                 }
                 else
                 {
@@ -244,7 +247,31 @@ namespace Halli_Galli.States
                     }
                 }
             }
+            VerlierenCheck(Spieler);
             geklingelt = false;
+        }
+
+        public void VerlierenCheck(Player[] Spieler)
+        {
+            for (int i = 0; i < Spieleranzahl; i++)
+            {
+                if (Spieler[i].Karten.Count == 0)
+                {
+                   
+
+                    for (int k = 0; k < Spieleranzahl - i - 1; k++)
+                    {
+                        int anzahl = Spieler[i + 1 + k].Karten.Count;
+                        for (int l = 0; l < anzahl; l++)
+                        {
+                            Spieler[i + k].Karten.Insert(0, Spieler[i + 1 + k].Karten[0]);
+                            Spieler[i + 1 + k].Karten.RemoveAt(0);
+                        }
+                    }
+
+                    Spieleranzahl--;
+                }
+            }
         }
 
         public override void Update(GameTime gameTime)
@@ -352,22 +379,10 @@ namespace Halli_Galli.States
                 {
                     if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
                     {
-
-
-                        if (Tisch.Count < derzeitiger_Spieler)
-                        {
-                            Card platzhalter = new Card(0, "Platzhalter");
-                            Tisch.Insert(derzeitiger_Spieler - 1, platzhalter);
-                        }
-
-
                         if (derzeitiger_Spieler == 4)
                             derzeitiger_Spieler = 0;
                         else
                             derzeitiger_Spieler++;
-
-
-
                     }
 
 
@@ -450,7 +465,7 @@ namespace Halli_Galli.States
                             Aktive_Karte2 += 21;
                     }
 
-                    if (derzeitiger_Spieler == Spieleranzahl)
+                    if (derzeitiger_Spieler >= Spieleranzahl)
                         derzeitiger_Spieler = 0;
 
                     nextCard = false;
