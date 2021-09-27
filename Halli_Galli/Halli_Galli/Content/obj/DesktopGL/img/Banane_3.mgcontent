@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/bib/source/repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</SourceFile>
-  <SourceTime>2021-09-23T14:15:24.3966333+02:00</SourceTime>
-  <DestFile>C:/Users/bib/source/repos/Halli_Galli2/Halli_Galli/Halli_Galli/Content/bin/DesktopGL/img/Banane_3.xnb</DestFile>
-  <DestTime>2021-09-24T10:11:34.2839793+02:00</DestTime>
+  <SourceFile>C:/Users/bib/source/repos/Halli_Galli5/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</SourceFile>
+  <SourceTime>2021-09-27T12:30:48.2173182+02:00</SourceTime>
+  <DestFile>C:/Users/bib/source/repos/Halli_Galli5/Halli_Galli/Halli_Galli/Content/bin/DesktopGL/img/Banane_3.xnb</DestFile>
+  <DestTime>2021-09-27T13:49:50.9342597+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

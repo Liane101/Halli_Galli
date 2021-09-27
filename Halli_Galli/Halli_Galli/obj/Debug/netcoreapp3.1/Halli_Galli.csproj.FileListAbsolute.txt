@@ -548,3 +548,12 @@ C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcore
 C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.dll
 C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.pdb
 C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache
+C:\Users\bib\Source\Repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Fonts\Font.xnb
+C:\Users\bib\Source\Repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\0_Karten_Ausgeschieden.xnb
+C:\Users\bib\Source\Repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Leertaste.xnb
+C:\Users\bib\Source\Repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Schatten.xnb
+C:\Users\bib\Source\Repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Tisch1.xnb
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\P1.xnb
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\P2.xnb
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\P3.xnb
+C:\Users\bib\source\repos\Halli_Galli5\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\P4.xnb

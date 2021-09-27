@@ -62,6 +62,11 @@ namespace Halli_Galli.States
         private SpriteFont Schrift_Groß;
         private Texture2D Schatten;
         private int[] Kartenzurueck = new int[4];
+        private Texture2D P1;
+        private Texture2D P2;
+        private Texture2D P3;
+        private Texture2D P4;
+        public static int[] Spielerreinfolge = new int[4];
 
 
 
@@ -100,55 +105,72 @@ namespace Halli_Galli.States
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
 
+            P1 = _content.Load<Texture2D>("img/P1");
+            P2 = _content.Load<Texture2D>("img/P2");
+            P3 = _content.Load<Texture2D>("img/P3");
+            P4 = _content.Load<Texture2D>("img/P4");
+
+            for (int i = 0; i < Spielerreinfolge.Length; i++)
+            {
+                Spielerreinfolge[i] = i + 1;
+            }
+
             if (Spieleranzahl == 2)
             {
-                button1 = new Vector2(275, 410);
-                button2 = new Vector2(1490, 627);
+                button1 = new Vector2(340 - 22, 705 - 25 + 140);
+                button2 = new Vector2(1560 - 22, 325 - 25 - 1407);
             }
 
             if (Spieleranzahl == 3)
             {
-                button1 = new Vector2(342, 620);
-                button2 = new Vector2(880, 323);
-                button3 = new Vector2(1420, 620);
+                button1 = new Vector2(390 - 22 - 120, 780 - 25 - 90);
+                button2 = new Vector2(950 - 22 + 120, 170 - 25);
+                button3 = new Vector2(1520 - 22 + 100, 780 - 25 - 70);
             }
 
             if (Spieleranzahl == 4)
             {
-                button1 = new Vector2(350, 627);
-                button2 = new Vector2(350, 415);
-                button3 = new Vector2(1415, 415);
-                button4 = new Vector2(1415, 627);
+                button1 = new Vector2(390 - 22 - 120, 780 - 25 - 90);
+                button2 = new Vector2(390 - 22 - 120, 250 - 25 + 90);
+                button3 = new Vector2(1520 - 22 + 100, 250 - 25 + 70);
+                button4 = new Vector2(1520 - 22 + 100, 780 - 25 - 70);
             }
 
-            var spieler1Button = new Button(buttonTexture, buttonFont)
+            P1 = _content.Load<Texture2D>("img/P1");
+            P2 = _content.Load<Texture2D>("img/P2");
+            P3 = _content.Load<Texture2D>("img/P3");
+            P4 = _content.Load<Texture2D>("img/P4");
+
+            Texture2D[] SpielerChips = { P1, P2, P3, P4 };
+
+            var spieler1Button = new Button(SpielerChips[Spielerreinfolge[0] - 1], buttonFont)
             {
                 Position = button1,
-                Text = "Spieler 1"
+                Text = ""
             };
 
             spieler1Button.Click += Spieler1_Click;
 
-            var spieler2Button = new Button(buttonTexture, buttonFont)
+            var spieler2Button = new Button(SpielerChips[Spielerreinfolge[1] - 1], buttonFont)
             {
                 Position = button2,
-                Text = "Spieler 2"
+                Text = ""
             };
 
             spieler2Button.Click += Spieler2_Click;
 
-            var spieler3Button = new Button(buttonTexture, buttonFont)
+            var spieler3Button = new Button(SpielerChips[Spielerreinfolge[2] - 1], buttonFont)
             {
                 Position = button3,
-                Text = "Spieler 3"
+                Text = ""
             };
 
             spieler3Button.Click += Spieler3_Click;
 
-            var spieler4Button = new Button(buttonTexture, buttonFont)
+            var spieler4Button = new Button(SpielerChips[Spielerreinfolge[3] - 1], buttonFont)
             {
                 Position = button4,
-                Text = "Spieler 4"
+                Text = ""
             };
 
             spieler4Button.Click += Spieler4_Click;
@@ -288,64 +310,73 @@ namespace Halli_Galli.States
                         }
                     }
 
+                    for (int k = i; k < Spieleranzahl - 1; k++)
+                    {
+                        Spielerreinfolge[k] = Spielerreinfolge[k + 1];
+                    }
+
                     Spieleranzahl--;
                 }
             }
             if (Spieleranzahl == 2)
             {
-                button1 = new Vector2(275, 410);
-                button2 = new Vector2(1490, 627);
-                button3 = new Vector2(8420, 620);
-                button4 = new Vector2(8415, 627);
+                button1 = new Vector2(340 - 22, 705 - 25 + 140);
+                button2 = new Vector2(1560 - 22, 325 - 25 - 1407);
             }
 
             if (Spieleranzahl == 3)
             {
-                button1 = new Vector2(342, 620);
-                button2 = new Vector2(880, 323);
-                button3 = new Vector2(1420, 620);
-                button4 = new Vector2(8415, 627);
+                button1 = new Vector2(390 - 22 - 120, 780 - 25 - 90);
+                button2 = new Vector2(950 - 22 + 120, 170 - 25);
+                button3 = new Vector2(1520 - 22 + 100, 780 - 25 - 70);
             }
 
             if (Spieleranzahl == 4)
             {
-                button1 = new Vector2(350, 627);
-                button2 = new Vector2(350, 415);
-                button3 = new Vector2(1415, 415);
-                button4 = new Vector2(1415, 627);
+                button1 = new Vector2(390 - 22 - 120, 780 - 25 - 90);
+                button2 = new Vector2(390 - 22 - 120, 250 - 25 + 90);
+                button3 = new Vector2(1520 - 22 + 100, 250 - 25 + 70);
+                button4 = new Vector2(1520 - 22 + 100, 780 - 25 - 70);
             }
 
-            var buttonTexture = _content.Load<Texture2D>("img/Button");
+
+            P1 = _content.Load<Texture2D>("img/P1");
+            P2 = _content.Load<Texture2D>("img/P2");
+            P3 = _content.Load<Texture2D>("img/P3");
+            P4 = _content.Load<Texture2D>("img/P4");
+
+            Texture2D[] SpielerChips = { P1, P2, P3, P4 };
+
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
 
-            var spieler1Button = new Button(buttonTexture, buttonFont)
+            var spieler1Button = new Button(SpielerChips[Spielerreinfolge[0] - 1], buttonFont)
             {
                 Position = button1,
-                Text = "Spieler 1"
+                Text = ""
             };
 
             spieler1Button.Click += Spieler1_Click;
 
-            var spieler2Button = new Button(buttonTexture, buttonFont)
+            var spieler2Button = new Button(SpielerChips[Spielerreinfolge[1] - 1], buttonFont)
             {
                 Position = button2,
-                Text = "Spieler 2"
+                Text = ""
             };
 
             spieler2Button.Click += Spieler2_Click;
 
-            var spieler3Button = new Button(buttonTexture, buttonFont)
+            var spieler3Button = new Button(SpielerChips[Spielerreinfolge[2] - 1], buttonFont)
             {
                 Position = button3,
-                Text = "Spieler 3"
+                Text = ""
             };
 
             spieler3Button.Click += Spieler3_Click;
 
-            var spieler4Button = new Button(buttonTexture, buttonFont)
+            var spieler4Button = new Button(SpielerChips[Spielerreinfolge[3] - 1], buttonFont)
             {
                 Position = button4,
-                Text = "Spieler 4"
+                Text = ""
             };
 
             spieler4Button.Click += Spieler4_Click;
@@ -430,6 +461,7 @@ namespace Halli_Galli.States
                                     ausgeschieden
             };
 
+            Texture2D[] SpielerChips = { P1, P2, P3, P4 };
 
             spriteBatch.Draw(klingel, new Vector2(960 - (klingel.Width / 2), 540 - (klingel.Height / 2)), Color.White);
 
@@ -673,12 +705,20 @@ namespace Halli_Galli.States
             {
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 540 + 190), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 540 - 190), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
+
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[0] - 1], new Vector2(340 - 22, 705 - 25 + 140), Color.White);
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[1] - 1], new Vector2(1560 - 22, 325 - 25 - 140), Color.White);
             }
             else if (Spieleranzahl == 3)
             {
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, 1.57f / 2, origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 2, 320), sourceRectangle, Color.White, 1.57f * 2, origin, 1.0f, SpriteEffects.None, 1);
+
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[0] - 1], new Vector2(390 - 22 - 120, 780 - 25 - 90), Color.White);
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[1] - 1], new Vector2(950 - 22 + 120, 170 - 25), Color.White);
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[2] - 1], new Vector2(1520 - 22 + 100, 780 - 25 - 70), Color.White);
+
             }
             else if (Spieleranzahl == 4)
             {
@@ -686,6 +726,11 @@ namespace Halli_Galli.States
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 * 2 / 3), sourceRectangle, Color.White, (1.57f * 3) + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 1080 / 3), sourceRectangle, Color.White, 1.57f + (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
                 spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 1080 / 3), sourceRectangle, Color.White, (1.57f * 3) - (1.57f / 2), origin, 1.0f, SpriteEffects.None, 1);
+
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[0] - 1], new Vector2(390 - 22 - 120, 780 - 25 - 90), Color.White);
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[1] - 1], new Vector2(390 - 22 - 120, 250 - 25 + 90), Color.White);
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[2] - 1], new Vector2(1520 - 22 + 100, 250 - 25 + 70), Color.White);
+                spriteBatch.Draw(SpielerChips[Spielerreinfolge[3] - 1], new Vector2(1520 - 22 + 100, 780 - 25 - 70), Color.White);
             }
 
             if (Spieleranzahl == 2)
@@ -760,36 +805,36 @@ namespace Halli_Galli.States
 
                 if (Spieleranzahl >= 2)
                 {
-                        foreach (var item in _Button1)
-                        {
-                            item.Draw(gameTime, spriteBatch);
-                        }
+                    foreach (var item in _Button1)
+                    {
+                        item.Draw(gameTime, spriteBatch);
+                    }
 
-                        foreach (var item in _Button2)
-                        {
-                            item.Draw(gameTime, spriteBatch);
-                        }
+                    foreach (var item in _Button2)
+                    {
+                        item.Draw(gameTime, spriteBatch);
+                    }
 
                 }
 
                 if (Spieleranzahl >= 3)
                 {
-                        foreach (var item in _Button3)
-                        {
-                            item.Draw(gameTime, spriteBatch);
-                        }
+                    foreach (var item in _Button3)
+                    {
+                        item.Draw(gameTime, spriteBatch);
+                    }
                 }
 
 
                 if (Spieleranzahl >= 4)
                 {
-                        foreach (var item in _Button4)
-                        {
-                            item.Draw(gameTime, spriteBatch);
-                        }
+                    foreach (var item in _Button4)
+                    {
+                        item.Draw(gameTime, spriteBatch);
+                    }
                 }
 
-                if(Spieleranzahl == 1)
+                if (Spieleranzahl == 1)
                 {
                     if(Spieler[0].Karten.Count > 0)
                         spriteBatch.DrawString(Schrift_Groß, "Spieler 1 gewinnt ", new Vector2(1350, 980), Color.White);
