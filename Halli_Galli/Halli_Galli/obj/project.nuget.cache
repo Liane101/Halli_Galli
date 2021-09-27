@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5RGpa9AnmL9X/L3WU1VLOHf0IAfMbjzDU+stn9kRBCnI97X9o22nzsxK/zadWWkPEaWwoI3r6uphqyKEdL51CQ==",
+  "dgSpecHash": "InBF9LBb+gT93yo4IXO4GhXzuM7Hxi5hIUQactKs1QQDd57CAkjAwT74/wIIZ+aemWiqoB0+eX+siRq5v6eOlw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bib\\source\\repos\\Halli_Galli5\\Halli_Galli\\Halli_Galli\\Halli_Galli.csproj",
+  "projectFilePath": "C:\\Users\\bib\\OneDrive - bib & FHDW\\2. Semester\\LEA\\Halli_Halli\\Halli_Galli\\Halli_Galli\\Halli_Galli.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bib\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
     "C:\\Users\\bib\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"

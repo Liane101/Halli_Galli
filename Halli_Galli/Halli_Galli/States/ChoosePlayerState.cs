@@ -68,17 +68,20 @@ namespace Halli_Galli.States
         private void Spieler2_Click(object sender, EventArgs e)
         {
             GameState.Spieleranzahl = 2;
+            StatisticState.anzStufen = 2;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
         private void Spieler3_Click(object sender, EventArgs e)
         {
             GameState.Spieleranzahl = 3;
+            StatisticState.anzStufen = 3;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
 
         private void Spieler4_Click(object sender, EventArgs e)
         {
             GameState.Spieleranzahl = 4;
+            StatisticState.anzStufen = 4;
             _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
         }
 

@@ -67,7 +67,7 @@ namespace Halli_Galli.States
         private Texture2D P3;
         private Texture2D P4;
         public static int[] Spielerreinfolge = new int[4];
-
+        
 
 
 
@@ -118,7 +118,7 @@ namespace Halli_Galli.States
             if (Spieleranzahl == 2)
             {
                 button1 = new Vector2(340 - 22, 705 - 25 + 140);
-                button2 = new Vector2(1560 - 22, 325 - 25 - 1407);
+                button2 = new Vector2(1560 - 22, 325 - 25 - 140);
             }
 
             if (Spieleranzahl == 3)
@@ -279,15 +279,7 @@ namespace Halli_Galli.States
                     }
                 }
             }
-            //if(Deck.Check(Tisch, Spieleranzahl) == false)
-            //{
-            //    if (Spieleranzahl == 4)
-            //        Kartenzurueck[Spieler_click] -= 3;
-            //    else if (Spieleranzahl == 3)
-            //        Kartenzurueck[Spieler_click] -= 2;
-            //    else if (Spieleranzahl == 2)
-            //        Kartenzurueck[Spieler_click] -= 1;
-            //}
+
             VerlierenCheck(Spieler);
             geklingelt = false;
         }
@@ -318,10 +310,16 @@ namespace Halli_Galli.States
                     Spieleranzahl--;
                 }
             }
+
+            if (Spieleranzahl == 1)
+            {
+                _game.ChangeState(new StatisticState(_game, _graphicsDevice, _content));
+            }
+
             if (Spieleranzahl == 2)
             {
                 button1 = new Vector2(340 - 22, 705 - 25 + 140);
-                button2 = new Vector2(1560 - 22, 325 - 25 - 1407);
+                button2 = new Vector2(1560 - 22, 325 - 25 - 140);
             }
 
             if (Spieleranzahl == 3)
@@ -427,7 +425,6 @@ namespace Halli_Galli.States
 
                 foreach (var item in _Button4)
                 item.Update(gameTime);
-            //base.Update(gameTime);
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
@@ -507,8 +504,8 @@ namespace Halli_Galli.States
                     if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
                     {
 
-                        if (derzeitiger_Spieler == 4)
-                            derzeitiger_Spieler = 0;
+                        if (derzeitiger_Spieler == Spieleranzahl)
+                            derzeitiger_Spieler = 1;
                         else
                             derzeitiger_Spieler++;
 
@@ -833,22 +830,6 @@ namespace Halli_Galli.States
                         item.Draw(gameTime, spriteBatch);
                     }
                 }
-
-                if (Spieleranzahl == 1)
-                {
-                    if(Spieler[0].Karten.Count > 0)
-                        spriteBatch.DrawString(Schrift_Groß, "Spieler 1 gewinnt ", new Vector2(1350, 980), Color.White);
-
-                    if (Spieler[1].Karten.Count > 0)
-                        spriteBatch.DrawString(Schrift_Groß, "Spieler 2 gewinnt ", new Vector2(1350, 980), Color.White);
-
-                    if (Spieler[2].Karten.Count > 0)
-                        spriteBatch.DrawString(Schrift_Groß, "Spieler 3 gewinnt ", new Vector2(1350, 980), Color.White);
-
-                    if (Spieler[3].Karten.Count > 0)
-                        spriteBatch.DrawString(Schrift_Groß, "Spieler 4 gewinnt ", new Vector2(1350, 980), Color.White);
-                }
-
             }
 
             spriteBatch.End();
