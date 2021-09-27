@@ -490,3 +490,61 @@ C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli1\Halli_Galli\Hall
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli1\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.dll
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli1\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.pdb
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli1\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\File.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Fonts\File.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Fonts\Font.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\0_Karten_Ausgeschieden.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Banane_1.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Banane_2.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Banane_3.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Banane_4.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Banane_5.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Button.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Erdbeere_1.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Erdbeere_2.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Erdbeere_3.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Erdbeere_4.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Erdbeere_5.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Erdbeere_x4.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 1.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 2.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Hilfe Seite 3.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Karten_Ruckseite.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Klingel.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Leertaste.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Limette_1.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Limette_2.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Limette_3.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Limette_4.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Limette_5.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Pflaume_1.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Pflaume_2.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Pflaume_3.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Pflaume_4.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Pflaume_5.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Schatten.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Tisch.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\Tisch1.xnb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.exe
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.deps.json
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.runtimeconfig.json
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.runtimeconfig.dev.json
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.dll
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.pdb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\osx\native\libSDL2-2.0.0.dylib
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\osx\native\libopenal.1.dylib
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\SDL2.dll
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\soft_oal.dll
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SDL2.dll
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\soft_oal.dll
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.csprojAssemblyReference.cache
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.AssemblyInfoInputs.cache
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.AssemblyInfo.cs
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.csproj.CoreCompileInputs.cache
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.csproj.CopyComplete
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.dll
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.pdb
+C:\Users\bib\Source\Repos\Halli_Galli3\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache

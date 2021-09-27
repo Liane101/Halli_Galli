@@ -277,6 +277,8 @@ namespace Halli_Galli.States
             {
                 button1 = new Vector2(275, 410);
                 button2 = new Vector2(1490, 627);
+                button3 = new Vector2(8420, 620);
+                button4 = new Vector2(8415, 627);
             }
 
             if (Spieleranzahl == 3)
@@ -284,6 +286,7 @@ namespace Halli_Galli.States
                 button1 = new Vector2(342, 620);
                 button2 = new Vector2(880, 323);
                 button3 = new Vector2(1420, 620);
+                button4 = new Vector2(8415, 627);
             }
 
             if (Spieleranzahl == 4)
@@ -579,8 +582,8 @@ namespace Halli_Galli.States
 
 
 
-                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[1].Karten.Count), new Vector2(340 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 705), Color.Black);
-                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[0].Karten.Count), new Vector2(1560 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[0].Karten.Count)).X, 325), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[0].Karten.Count), new Vector2(340 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 705), Color.Black);
+                spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[1].Karten.Count), new Vector2(1560 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[0].Karten.Count)).X, 325), Color.Black);
             }
             else if (Spieleranzahl == 3)
             {
@@ -636,66 +639,34 @@ namespace Halli_Galli.States
 
                 if (Spieleranzahl >= 2)
                 {
+                        foreach (var item in _Button1)
+                        {
+                            item.Draw(gameTime, spriteBatch);
+                        }
 
-                    if (Tisch.Count > 1)
-                    {
-                        if (Tisch[0].Fruit != "Platzhalter")
-                            foreach (var item in _Button1)
-                            {
-                                item.Draw(gameTime, spriteBatch);
-                            }
-                    }
-                    else if (Spieler[0].Karten.Count != 0)
-                            foreach (var item in _Button1)
-                            {
-                                item.Draw(gameTime, spriteBatch);
-                            }
-
-
-                    if (Tisch.Count > 2)
-                    {
-                        if (Tisch[1].Fruit != "Platzhalter")
-                            foreach (var item in _Button2)
-                            {
-                                item.Draw(gameTime, spriteBatch);
-                            }
-                    }
-                    else if(Spieler[1].Karten.Count != 0)
-                            foreach (var item in _Button2)
-                            {
-                                item.Draw(gameTime, spriteBatch);
-                            }
+                        foreach (var item in _Button2)
+                        {
+                            item.Draw(gameTime, spriteBatch);
+                        }
 
                 }
 
-                if (Tisch.Count > 3)
+                if (Spieleranzahl >= 3)
                 {
-                    if (Tisch[2].Fruit != "Platzhalter")
                         foreach (var item in _Button3)
                         {
                             item.Draw(gameTime, spriteBatch);
                         }
                 }
-                else if (Spieler[2].Karten.Count != 0)
-                    foreach (var item in _Button3)
-                    {
-                        item.Draw(gameTime, spriteBatch);
-                    }
 
 
-                if (Tisch.Count > 4)
+                if (Spieleranzahl >= 4)
                 {
-                    if (Tisch[3].Fruit != "Platzhalter")
                         foreach (var item in _Button4)
                         {
                             item.Draw(gameTime, spriteBatch);
                         }
                 }
-                else if (Spieler[3].Karten.Count != 0)
-                    foreach (var item in _Button4)
-                    {
-                        item.Draw(gameTime, spriteBatch);
-                    }
 
             }
 
