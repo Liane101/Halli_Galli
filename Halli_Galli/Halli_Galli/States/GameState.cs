@@ -212,6 +212,11 @@ namespace Halli_Galli.States
                 Aktive_Karte2 = 0;
                 Aktive_Karte3 = 0;
                 Aktive_Karte4 = 0;
+
+                for (int i = 0; i < Kartenzurueck.Length; i++)
+                {
+                    Kartenzurueck[i] = 0;
+                }
             }
             else
             {
@@ -230,6 +235,7 @@ namespace Halli_Galli.States
                     {
                         Spieler[0].Karten.Insert(0, Spieler[Spieler_click].Karten[0]);
                         Spieler[Spieler_click].Karten.RemoveAt(0);
+                        
                     }
 
                     if (Spieleranzahl >= 2 && Spieler_click != 1)
@@ -251,6 +257,15 @@ namespace Halli_Galli.States
                     }
                 }
             }
+            //if(Deck.Check(Tisch, Spieleranzahl) == false)
+            //{
+            //    if (Spieleranzahl == 4)
+            //        Kartenzurueck[Spieler_click] -= 3;
+            //    else if (Spieleranzahl == 3)
+            //        Kartenzurueck[Spieler_click] -= 2;
+            //    else if (Spieleranzahl == 2)
+            //        Kartenzurueck[Spieler_click] -= 1;
+            //}
             VerlierenCheck(Spieler);
             geklingelt = false;
         }
@@ -456,18 +471,14 @@ namespace Halli_Galli.States
 
                 if (nextCard)
                 {
+                    
                     if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
                     {
-                        
-                            Kartenzurueck[derzeitiger_Spieler - 1]++;
-
-
 
                         if (derzeitiger_Spieler == 4)
                             derzeitiger_Spieler = 0;
                         else
                             derzeitiger_Spieler++;
-
 
                     }
 
@@ -567,7 +578,15 @@ namespace Halli_Galli.States
                         Tisch.RemoveAt(derzeitiger_Spieler - 1);
                     }
 
-                        Tisch.Insert(derzeitiger_Spieler - 1, Spieler[derzeitiger_Spieler - 1].Karten[0]);
+                    if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
+                    {
+                        derzeitiger_Spieler++;
+                        if (derzeitiger_Spieler == 4)
+                            derzeitiger_Spieler = 1;
+                    }
+
+
+                    Tisch.Insert(derzeitiger_Spieler - 1, Spieler[derzeitiger_Spieler - 1].Karten[0]);
                         Spieler[derzeitiger_Spieler - 1].Karten.RemoveAt(0);
 
                     Kartenzurueck[derzeitiger_Spieler - 1]++;
@@ -768,6 +787,21 @@ namespace Halli_Galli.States
                         {
                             item.Draw(gameTime, spriteBatch);
                         }
+                }
+
+                if(Spieleranzahl == 1)
+                {
+                    if(Spieler[0].Karten.Count > 0)
+                        spriteBatch.DrawString(Schrift_Groß, "Spieler 1 gewinnt ", new Vector2(1350, 980), Color.White);
+
+                    if (Spieler[1].Karten.Count > 0)
+                        spriteBatch.DrawString(Schrift_Groß, "Spieler 2 gewinnt ", new Vector2(1350, 980), Color.White);
+
+                    if (Spieler[2].Karten.Count > 0)
+                        spriteBatch.DrawString(Schrift_Groß, "Spieler 3 gewinnt ", new Vector2(1350, 980), Color.White);
+
+                    if (Spieler[3].Karten.Count > 0)
+                        spriteBatch.DrawString(Schrift_Groß, "Spieler 4 gewinnt ", new Vector2(1350, 980), Color.White);
                 }
 
             }
