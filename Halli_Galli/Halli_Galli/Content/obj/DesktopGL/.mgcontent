@@ -8,6 +8,9 @@
     <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/Fonts/File.spritefont</File>
     <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/Fonts/Font.spritefont</File>
     <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/img/0_Karten_Ausgeschieden.png</File>
+    <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/img/1.png</File>
+    <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/img/2.png</File>
+    <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/img/3.png</File>
     <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/img/Banane_1.png</File>
     <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/img/Banane_2.png</File>
     <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</File>
@@ -53,6 +56,9 @@
     <File>C:/Users/bib/source/repos/Halli_Galli7/Halli_Galli/Halli_Galli/Content/Sounds/Tischklingel.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

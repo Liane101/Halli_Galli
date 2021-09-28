@@ -696,3 +696,6 @@ C:\Users\bib\Source\Repos\Halli_Galli7\Halli_Galli\Halli_Galli\bin\Debug\netcore
 C:\Users\bib\Source\Repos\Halli_Galli7\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\P2_4x.xnb
 C:\Users\bib\Source\Repos\Halli_Galli7\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\P3_4x.xnb
 C:\Users\bib\Source\Repos\Halli_Galli7\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\P4_4x.xnb
+C:\Users\bib\Source\Repos\Halli_Galli7\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\1.xnb
+C:\Users\bib\Source\Repos\Halli_Galli7\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\2.xnb
+C:\Users\bib\Source\Repos\Halli_Galli7\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\3.xnb

@@ -66,8 +66,15 @@ namespace Halli_Galli.States
         private Texture2D P2;
         private Texture2D P3;
         private Texture2D P4;
+        private Texture2D Zahl1;
+        private Texture2D Zahl2;
+        private Texture2D Zahl3;
         public static int[] Spielerreinfolge = new int[4];
         private Song klingelsound;
+        private bool countdown = true;
+        private int countdownzähler = 0;
+        private TimeSpan countdown_gestartet;
+        private TimeSpan countdown_letzte_dekrementierung;
 
 
 
@@ -102,6 +109,10 @@ namespace Halli_Galli.States
             Schatten = _content.Load<Texture2D>("img/Schatten");
             ausgeschieden = _content.Load<Texture2D>("img/0_Karten_Ausgeschieden");
             klingelsound = _content.Load<Song>("Sounds/Tischklingel");
+
+            Zahl1 = _content.Load<Texture2D>("img/1");
+            Zahl2 = _content.Load<Texture2D>("img/2");
+            Zahl3 = _content.Load<Texture2D>("img/3");
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
@@ -281,7 +292,10 @@ namespace Halli_Galli.States
                 }
             }
 
+
             VerlierenCheck(Spieler);
+
+            countdown = true;
             geklingelt = false;
         }
 
@@ -412,14 +426,39 @@ namespace Halli_Galli.States
         {
 
 
-            if (letze_Austeilung + zeit_zwischen_Austeilen < gameTime.TotalGameTime)
+            
+
+            if(countdown)
+            {
+                if (countdownzähler <= 0)
+                {
+                    countdown = false;
+                    countdown_gestartet = gameTime.TotalGameTime;
+                    letze_Austeilung = gameTime.TotalGameTime;
+
+                    countdownzähler = 4;
+                }
+
+                if (TimeSpan.FromMilliseconds(1000) + countdown_letzte_dekrementierung < gameTime.TotalGameTime)
+                {
+                    countdownzähler--;
+
+                    countdown_letzte_dekrementierung = gameTime.TotalGameTime;
+
+                    nextCard = false;
+                }
+
+                
+            }
+
+            if (letze_Austeilung + zeit_zwischen_Austeilen < gameTime.TotalGameTime && countdown == false)
             {
                 letze_Austeilung = gameTime.TotalGameTime;
                 nextCard = true;
             }
 
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            if (Keyboard.GetState().IsKeyDown(Keys.Space) && countdown == false)
             {
                 geklingelt = true;
                 MediaPlayer.Play(klingelsound);
@@ -470,12 +509,18 @@ namespace Halli_Galli.States
                                     ausgeschieden
             };
 
+            Texture2D[] Countdownzahlen = { Zahl1, Zahl2, Zahl3 };
+
             Texture2D[] SpielerChips = { P1, P2, P3, P4 };
 
             spriteBatch.Draw(klingel, new Vector2(960 - (klingel.Width / 2), 540 - (klingel.Height / 2)), Color.White);
 
             Rectangle sourceRectangle = new Rectangle(0, 0, kartenrückseite.Width, kartenrückseite.Height);
             Vector2 origin = new Vector2(kartenrückseite.Width / 2, 2);
+
+            
+
+
 
             if (start)
             {
@@ -497,6 +542,7 @@ namespace Halli_Galli.States
                     }
                     Spieler[i] = new Player(Kartenliste);
                 }
+                countdown = true;
 
                 start = false;
             }
@@ -842,6 +888,12 @@ namespace Halli_Galli.States
                         item.Draw(gameTime, spriteBatch);
                     }
                 }
+            }
+
+            if (countdown && countdownzähler != 0 && countdownzähler < 4)
+            {
+                spriteBatch.Draw(Countdownzahlen[countdownzähler - 1], new Vector2(960 - Countdownzahlen[countdownzähler - 1].Width / 2 , 540 - Countdownzahlen[countdownzähler - 1].Height / 2  ), Color.White);
+
             }
 
             spriteBatch.End();
