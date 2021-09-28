@@ -303,9 +303,19 @@ namespace Halli_Galli.States
                         }
                     }
 
-                    for (int k = i; k < Spieleranzahl - 1; k++)
+                    if (Spieleranzahl > 2)
+                        for (int k = i; k < Spieleranzahl - 1; k++)
+                        {
+                            int speicher = Spielerreinfolge[k];
+                            Spielerreinfolge[k] = Spielerreinfolge[k + 1];
+                            Spielerreinfolge[k + 1] = speicher;
+                        }
+                    else if (i == 0)
                     {
-                        Spielerreinfolge[k] = Spielerreinfolge[k + 1];
+                        int speicher;
+                        speicher = Spielerreinfolge[0];
+                        Spielerreinfolge[0] = Spielerreinfolge[1];
+                        Spielerreinfolge[1] = speicher;
                     }
 
                     Spieleranzahl--;
@@ -506,7 +516,7 @@ namespace Halli_Galli.States
                     if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
                     {
 
-                        if (derzeitiger_Spieler == Spieleranzahl)
+                        if (derzeitiger_Spieler >= Spieleranzahl)
                             derzeitiger_Spieler = 1;
                         else
                             derzeitiger_Spieler++;
@@ -612,7 +622,7 @@ namespace Halli_Galli.States
                     if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
                     {
                         derzeitiger_Spieler++;
-                        if (derzeitiger_Spieler == 4)
+                        if (derzeitiger_Spieler >= Spieleranzahl)
                             derzeitiger_Spieler = 1;
                     }
 
