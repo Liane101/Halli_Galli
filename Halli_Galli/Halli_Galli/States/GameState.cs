@@ -296,7 +296,7 @@ namespace Halli_Galli.States
             VerlierenCheck(Spieler);
 
             countdown = true;
-            geklingelt = false;
+            
         }
 
         public void VerlierenCheck(Player[] Spieler)
@@ -435,7 +435,7 @@ namespace Halli_Galli.States
                     countdown = false;
                     countdown_gestartet = gameTime.TotalGameTime;
                     letze_Austeilung = gameTime.TotalGameTime;
-
+                    geklingelt = false;
                     countdownzähler = 4;
                 }
 
