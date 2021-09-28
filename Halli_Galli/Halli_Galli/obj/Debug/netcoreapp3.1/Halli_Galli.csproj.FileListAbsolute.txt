@@ -619,3 +619,5 @@ C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli\Halli_Galli\Halli
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.dll
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.pdb
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Sounds\Tischklingel.ogg
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\Halli_Halli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Sounds\Tischklingel.xnb

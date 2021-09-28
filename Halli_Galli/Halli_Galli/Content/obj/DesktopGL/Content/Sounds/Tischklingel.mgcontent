@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Halli/Halli_Galli/Halli_Galli/Content/Sounds/Tischklingel.mp3</SourceFile>
+  <SourceTime>2021-09-27T08:38:05.8963699+02:00</SourceTime>
+  <DestFile>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Halli/Halli_Galli/Halli_Galli/Content/bin/DesktopGL/Content/Sounds/Tischklingel.xnb</DestFile>
+  <DestTime>2021-09-28T08:08:15.1326743+02:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2020-08-10T16:17:54+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/Halli_Halli/Halli_Galli/Halli_Galli/Content/bin/DesktopGL/Content/Sounds/Tischklingel.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

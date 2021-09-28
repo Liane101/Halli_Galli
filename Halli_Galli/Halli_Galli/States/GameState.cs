@@ -67,7 +67,7 @@ namespace Halli_Galli.States
         private Texture2D P3;
         private Texture2D P4;
         public static int[] Spielerreinfolge = new int[4];
-        
+        private Song klingelsound;
 
 
 
@@ -101,6 +101,7 @@ namespace Halli_Galli.States
             Schrift_Groß = _content.Load<SpriteFont>("Fonts/Font");
             Schatten = _content.Load<Texture2D>("img/Schatten");
             ausgeschieden = _content.Load<Texture2D>("img/0_Karten_Ausgeschieden");
+            klingelsound = _content.Load<Song>("Sounds/Tischklingel");
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
@@ -409,21 +410,22 @@ namespace Halli_Galli.States
 
 
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
                 geklingelt = true;
+                MediaPlayer.Play(klingelsound);
+            }
 
-            
-                foreach (var item in _Button1)
-                    item.Update(gameTime);
-
-
-                foreach (var item in _Button2)
+            foreach (var item in _Button1)
                 item.Update(gameTime);
 
 
-                foreach (var item in _Button3)
+            foreach (var item in _Button2)
                 item.Update(gameTime);
 
-                foreach (var item in _Button4)
+            foreach (var item in _Button3)
+                item.Update(gameTime);
+
+            foreach (var item in _Button4)
                 item.Update(gameTime);
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

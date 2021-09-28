@@ -466,3 +466,9 @@
 /processorParam:TextureFormat=Color
 /build:img/Tisch1.jpg
 
+#begin Sounds/Tischklingel.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/Tischklingel.mp3
+
