@@ -70,9 +70,13 @@ namespace Halli_Galli.States
         private Texture2D Zahl3;
         public static int[] Spielerreinfolge = new int[4];
         private Song klingelsound;
+        private Song Deal1;
+        private Song Deal2;
+        private Song Deal4;
         private bool countdown = true;
         private int countdownzähler = 0;
         private TimeSpan countdown_letzte_dekrementierung;
+        private bool soundgespielt;
 
 
 
@@ -105,7 +109,11 @@ namespace Halli_Galli.States
             leertaste = _content.Load<Texture2D>("img/Leertaste");
             Schrift_Groß = _content.Load<SpriteFont>("Fonts/Font");
             Schatten = _content.Load<Texture2D>("img/Schatten");
+
             klingelsound = _content.Load<Song>("Sounds/Tischklingel");
+            Deal1 = _content.Load<Song>("Sounds/Deal (1)");
+            Deal2 = _content.Load<Song>("Sounds/Deal (2)");
+            Deal4 = _content.Load<Song>("Sounds/Deal (4)");
 
             Zahl1 = _content.Load<Texture2D>("img/1");
             Zahl2 = _content.Load<Texture2D>("img/2");
@@ -454,7 +462,7 @@ namespace Halli_Galli.States
             if (Keyboard.GetState().IsKeyDown(Keys.Space) && countdown == false)
             {
                 geklingelt = true;
-                MediaPlayer.Play(klingelsound);
+              
             }
 
             foreach (var item in _Button1)
@@ -501,6 +509,8 @@ namespace Halli_Galli.States
                                     pflaume_5
             };
 
+            Song[] Deal = {Deal1, Deal2, Deal4};
+
             Texture2D[] Countdownzahlen = { Zahl1, Zahl2, Zahl3 };
 
             Texture2D[] SpielerChips = { P1, P2, P3, P4 };
@@ -545,6 +555,12 @@ namespace Halli_Galli.States
                 {
                     runde++;
                     derzeitiger_Spieler++;
+
+                    Random rnd = new Random();
+                    int sound = rnd.Next(0, 3);
+
+                    MediaPlayer.Play(Deal[sound]);
+
 
                     if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
                     {
@@ -658,6 +674,12 @@ namespace Halli_Galli.States
                     if (runde == 3 && Spieleranzahl == 3)
                         derzeitiger_Spieler = 3;
 
+                    if (runde == 4 && Spieleranzahl == 4)
+                        derzeitiger_Spieler = 4;
+
+                    if (runde == 2 && Spieleranzahl == 2)
+                        derzeitiger_Spieler = 2;
+
                     Tisch.Insert(derzeitiger_Spieler - 1, Spieler[derzeitiger_Spieler - 1].Karten[0]);
                         Spieler[derzeitiger_Spieler - 1].Karten.RemoveAt(0);
 
@@ -727,6 +749,7 @@ namespace Halli_Galli.States
                     if (derzeitiger_Spieler >= Spieleranzahl)
                         derzeitiger_Spieler = 0;
 
+                    soundgespielt = false;
                     nextCard = false;
                 }
             }
@@ -839,12 +862,21 @@ namespace Halli_Galli.States
                 spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[1].Karten.Count), new Vector2(390 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[1].Karten.Count)).X, 250), Color.Black);
                 spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[2].Karten.Count), new Vector2(1520 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[2].Karten.Count)).X, 250), Color.Black);
                 spriteBatch.DrawString(Schrift_Groß, Convert.ToString(Spieler[3].Karten.Count), new Vector2(1520 + 17 - kleine_Schrift.MeasureString(Convert.ToString(Spieler[3].Karten.Count)).X, 780), Color.Black);
+
+
             }
 
             spriteBatch.DrawString(kleine_Schrift, "" + Tisch.Count, new Vector2(900, 500), Color.Black);
 
            if(geklingelt == true)
             {
+                if (soundgespielt == false)
+                {
+                    MediaPlayer.Play(klingelsound);
+                    soundgespielt = true;
+                }
+               
+
                 spriteBatch.Draw(leertaste, new Vector2(234, 30), Color.White);
 
                 if (Spieleranzahl >= 2)
