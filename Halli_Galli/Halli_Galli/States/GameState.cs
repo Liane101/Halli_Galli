@@ -33,7 +33,6 @@ namespace Halli_Galli.States
         private Texture2D pflaume_3;
         private Texture2D pflaume_4;
         private Texture2D pflaume_5;
-        private Texture2D ausgeschieden;
         private SpriteFont kleine_Schrift;
         public static int Spieleranzahl;
         public Player[] Spieler = new Player[Spieleranzahl];
@@ -73,7 +72,6 @@ namespace Halli_Galli.States
         private Song klingelsound;
         private bool countdown = true;
         private int countdownzähler = 0;
-        private TimeSpan countdown_gestartet;
         private TimeSpan countdown_letzte_dekrementierung;
 
 
@@ -107,7 +105,6 @@ namespace Halli_Galli.States
             leertaste = _content.Load<Texture2D>("img/Leertaste");
             Schrift_Groß = _content.Load<SpriteFont>("Fonts/Font");
             Schatten = _content.Load<Texture2D>("img/Schatten");
-            ausgeschieden = _content.Load<Texture2D>("img/0_Karten_Ausgeschieden");
             klingelsound = _content.Load<Song>("Sounds/Tischklingel");
 
             Zahl1 = _content.Load<Texture2D>("img/1");
@@ -203,7 +200,6 @@ namespace Halli_Galli.States
             {
                 spieler4Button,
             };
-
 
         }
 
@@ -333,6 +329,8 @@ namespace Halli_Galli.States
                     }
 
                     Spieleranzahl--;
+                    Tisch.Insert(Tisch.Count, Tisch[i]);
+                    Tisch.RemoveAt(i);
                 }
             }
 
@@ -429,7 +427,6 @@ namespace Halli_Galli.States
                 if (countdownzähler <= 0)
                 {
                     countdown = false;
-                    countdown_gestartet = gameTime.TotalGameTime;
                     letze_Austeilung = gameTime.TotalGameTime;
                     countdownzähler = 4;
                 }
@@ -439,19 +436,20 @@ namespace Halli_Galli.States
                     countdownzähler--;
 
                     countdown_letzte_dekrementierung = gameTime.TotalGameTime;
-
+                    
                     nextCard = false;
                 }
 
                 
             }
 
+           // int rundealt = 3;
             if (letze_Austeilung + zeit_zwischen_Austeilen < gameTime.TotalGameTime && countdown == false)
             {
                 letze_Austeilung = gameTime.TotalGameTime;
+                
                 nextCard = true;
             }
-
 
             if (Keyboard.GetState().IsKeyDown(Keys.Space) && countdown == false)
             {
@@ -500,8 +498,7 @@ namespace Halli_Galli.States
                                     pflaume_2,
                                     pflaume_3,
                                     pflaume_4,
-                                    pflaume_5,
-                                    ausgeschieden
+                                    pflaume_5
             };
 
             Texture2D[] Countdownzahlen = { Zahl1, Zahl2, Zahl3 };
@@ -544,16 +541,11 @@ namespace Halli_Galli.States
 
             if (geklingelt == false && countdown == false)
             {
-
                 if (nextCard)
                 {
                     runde++;
                     derzeitiger_Spieler++;
-                }
 
-                if (nextCard)
-                {
-                    
                     if (Spieler[derzeitiger_Spieler - 1].Karten.Count == 0)
                     {
 
@@ -576,10 +568,6 @@ namespace Halli_Galli.States
 
                     if (AusetzendeSpieler == Spieleranzahl)
                     {
-                        Kartenzurueck[0] -= 1;
-
-                        int Tischanzahl = Tisch.Count;
-
                         if (Spieleranzahl == 2)
                         {
                             for (int i = 0; i < Kartenzurueck[0]; i++)
@@ -647,7 +635,7 @@ namespace Halli_Galli.States
                         derzeitiger_Spieler = 1;
                         runde = 0;
 
-                        for (int i = 0; i < Kartenzurueck.Length; i++)
+                        for (int i = 0; i < Spieleranzahl; i++)
                         {
                             Kartenzurueck[i] = 0;
                         }
@@ -667,6 +655,8 @@ namespace Halli_Galli.States
                             derzeitiger_Spieler = 1;
                     }
 
+                    if (runde == 3 && Spieleranzahl == 3)
+                        derzeitiger_Spieler = 3;
 
                     Tisch.Insert(derzeitiger_Spieler - 1, Spieler[derzeitiger_Spieler - 1].Karten[0]);
                         Spieler[derzeitiger_Spieler - 1].Karten.RemoveAt(0);
@@ -688,9 +678,6 @@ namespace Halli_Galli.States
                         else if (Tisch[0].Fruit == "Pflaume")
                             Aktive_Karte1 += 15;
 
-                        else if (Tisch[0].Fruit == "Platzhalter")
-                            Aktive_Karte2 += 21;
-
                         if (derzeitiger_Spieler > 1)
                         {
                             Aktive_Karte2 = 0;
@@ -705,8 +692,6 @@ namespace Halli_Galli.States
                             else if (Tisch[1].Fruit == "Pflaume")
                                 Aktive_Karte2 += 15;
 
-                            else if (Tisch[1].Fruit == "Platzhalter")
-                                Aktive_Karte2 += 21;
                         }
                     }
                     if (Spieleranzahl >= 3 && derzeitiger_Spieler > 2)
@@ -723,8 +708,6 @@ namespace Halli_Galli.States
                         else if (Tisch[2].Fruit == "Pflaume")
                             Aktive_Karte3 += 15;
 
-                        else if (Tisch[2].Fruit == "Platzhalter")
-                            Aktive_Karte2 += 21;
                     }
                     if (Spieleranzahl >= 4 && derzeitiger_Spieler > 3)
                     {
@@ -739,9 +722,6 @@ namespace Halli_Galli.States
 
                         else if (Tisch[3].Fruit == "Pflaume")
                             Aktive_Karte4 += 15;
-
-                        else if (Tisch[3].Fruit == "Platzhalter")
-                            Aktive_Karte2 += 21;
                     }
 
                     if (derzeitiger_Spieler >= Spieleranzahl)
@@ -753,7 +733,7 @@ namespace Halli_Galli.States
 
             if (Spieleranzahl == 2)
             {
-                if(Spieler[0].Karten.Count > 0)
+                if (Spieler[0].Karten.Count > 0)
                     spriteBatch.Draw(kartenrückseite, new Vector2(1920 / 4, 540 + 190), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
                 if (Spieler[1].Karten.Count > 0)
                     spriteBatch.Draw(kartenrückseite, new Vector2(1920 * 3 / 4, 540 - 190), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);

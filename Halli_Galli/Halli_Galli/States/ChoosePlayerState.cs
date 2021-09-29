@@ -13,10 +13,13 @@ namespace Halli_Galli.States
         private SpriteFont schrift;
         public static int player;
         private List<Component> _components;
+        private Texture2D logo;
+
 
         public ChoosePlayerState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
             schrift = _content.Load<SpriteFont>("Fonts/Font");
+            logo = _content.Load<Texture2D>("img/Logo");
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
@@ -95,6 +98,8 @@ namespace Halli_Galli.States
             }
 
             spriteBatch.DrawString(schrift, "Aktuelle Schwierigkeit: " + ChangeDifficultyState.schwierigkeit, new Vector2(1350, 980), Color.White);
+
+            spriteBatch.Draw(logo, new Vector2(960 - logo.Width / 2, 240 - logo.Height / 2), Color.White);
 
             spriteBatch.End();
         }

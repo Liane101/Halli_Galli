@@ -31,7 +31,50 @@ namespace Halli_Galli.States
             spieler3 = _content.Load<Texture2D>("img/P3_4x");
             spieler4 = _content.Load<Texture2D>("img/P4_4x");
 
+            var buttonTexture = _content.Load<Texture2D>("img/Button");
+            var buttonFont = _content.Load<SpriteFont>("Fonts/File");
+            var menuButton = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(30, 980),
+                Text = "Hauptmenue"
+            };
 
+            menuButton.Click += MenuButton_Click;
+
+            var restartButton = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(200, 980),
+                Text = "Neustart"
+            };
+
+            restartButton.Click += RestartButton_Click;
+
+            var quitGameButton = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(370, 980),
+                Text = "Exit"
+            };
+
+            quitGameButton.Click += QuitGameButton_Click;
+
+            _components = new List<Component>
+            {
+                menuButton,
+                restartButton,
+                quitGameButton
+            };
+        }
+        private void QuitGameButton_Click(object sender, EventArgs e)
+        {
+            _game.Exit();
+        }
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            _game.ChangeState(new ChoosePlayerState(_game, _graphicsDevice, _content));
+        }
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            _game.ChangeState(new MenuState(_game, _graphicsDevice, _content));
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
@@ -66,6 +109,10 @@ namespace Halli_Galli.States
                 spriteBatch.Draw(spieler[GameState.Spielerreinfolge[3] - 1], new Vector2(1490, 695), Color.White);
             }
 
+            foreach (var item in _components)
+            {
+                item.Draw(gameTime, spriteBatch);
+            }
 
             spriteBatch.End();
         }
@@ -77,7 +124,8 @@ namespace Halli_Galli.States
 
         public override void Update(GameTime gameTime)
         {
-            
+            foreach (var item in _components)
+                item.Update(gameTime);
         }
     }
 }
