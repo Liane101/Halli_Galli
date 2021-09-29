@@ -18,6 +18,7 @@ namespace Halli_Galli.States
         private Texture2D spieler2;
         private Texture2D spieler3;
         private Texture2D spieler4;
+        private List<Component> _components;
 
         public StatisticState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
@@ -29,6 +30,8 @@ namespace Halli_Galli.States
             spieler2 = _content.Load<Texture2D>("img/P2_4x");
             spieler3 = _content.Load<Texture2D>("img/P3_4x");
             spieler4 = _content.Load<Texture2D>("img/P4_4x");
+
+
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
