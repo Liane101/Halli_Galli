@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Halli_Galli")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Halli Galli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Halli_Galli")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Halli_Galli")]
+[assembly: System.Reflection.AssemblyProductAttribute("Halli Galli")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Halli Galli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Von der MSBuild WriteCodeFragment-Klasse generiert.

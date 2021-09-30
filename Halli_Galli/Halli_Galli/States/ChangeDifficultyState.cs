@@ -13,9 +13,12 @@ namespace Halli_Galli.States
         public static int geschwindigkeit = 1000;
         private SpriteFont schrift;
         private List<Component> _components;
+        private Texture2D logo;
+
         public ChangeDifficultyState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
             schrift = _content.Load<SpriteFont>("Fonts/Font");
+            logo = _content.Load<Texture2D>("img/Logo");
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
@@ -89,6 +92,8 @@ namespace Halli_Galli.States
             {
                 item.Draw(gameTime, spriteBatch);
             }
+
+            spriteBatch.Draw(logo, new Vector2(960 - logo.Width / 2, 240 - logo.Height / 2), Color.White);
 
             spriteBatch.End();
         }

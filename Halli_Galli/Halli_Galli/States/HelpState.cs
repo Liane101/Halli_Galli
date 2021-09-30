@@ -12,11 +12,14 @@ namespace Halli_Galli.States
     {
         private List<Component> _back;
         private List<Component> _forward;
-        private List<Component> _newGame;
+        private List<Component> _menu;
         private Texture2D Hilfe1;
         private Texture2D Hilfe2;
         private Texture2D Hilfe3;
         private int Seite = 1;
+        private int x;
+        private int y;
+
         public HelpState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
             Hilfe1 = _content.Load<Texture2D>("img/Hilfe Seite 1");
@@ -41,6 +44,18 @@ namespace Halli_Galli.States
 
             backButton.Click += back_Click;
 
+            var menuButton = new Button(buttonTexture, buttonFont)
+            {
+                Position = new Vector2(1700, 950),
+                Text = "Hauptmenue"
+            };
+            menuButton.Click += Menu_Click;
+
+            _menu = new List<Component>
+                {
+                    menuButton
+                };
+
             _back = new List<Component>
             {
                 backButton
@@ -53,9 +68,12 @@ namespace Halli_Galli.States
 
         }
 
-        private void NewGameButton_Click(object sender, EventArgs e)
+        private void Menu_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new ChoosePlayerState(_game, _graphicsDevice, _content));
+            if (Seite <= 2)
+                Seite++;
+            else
+                _game.ChangeState(new MenuState(_game, _graphicsDevice, _content));
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -67,10 +85,7 @@ namespace Halli_Galli.States
         }
         private void forward_Click(object sender, EventArgs e)
         {
-            if (Seite <= 2)
-                Seite++;
-            else
-                Seite += 0;
+
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
@@ -102,6 +117,10 @@ namespace Halli_Galli.States
             if (Seite == 3)
             {
                 spriteBatch.Draw(Hilfe3, new Rectangle(0, 0, 1920, 1080), Color.White);
+                foreach (var item in _menu)
+                {
+                    item.Draw(gameTime, spriteBatch);
+                }
             }
 
             spriteBatch.End();
@@ -116,7 +135,10 @@ namespace Halli_Galli.States
         {
             foreach (var item in _back)
                 item.Update(gameTime);
-            foreach(var item in _forward)
+            foreach (var item in _forward)
+                item.Update(gameTime);
+
+            foreach (var item in _menu)
                 item.Update(gameTime);
         }
     }

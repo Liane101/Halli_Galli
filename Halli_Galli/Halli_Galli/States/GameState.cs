@@ -214,20 +214,24 @@ namespace Halli_Galli.States
 
         private void Spieler1_Click(object sender, EventArgs e)
         {
-            SpielerX_Click(0);
+            if (geklingelt)
+                SpielerX_Click(0);
         }
         private void Spieler2_Click(object sender, EventArgs e)
         {
-            SpielerX_Click(1);
+            if (geklingelt)
+                SpielerX_Click(1);
         }
         private void Spieler3_Click(object sender, EventArgs e)
         {
-            SpielerX_Click(2);
+            if (geklingelt)
+                SpielerX_Click(2);
         }
 
         private void Spieler4_Click(object sender, EventArgs e)
         {
-            SpielerX_Click(3);
+            if (geklingelt)
+                SpielerX_Click(3);
         }
 
 

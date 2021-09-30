@@ -945,12 +945,6 @@ C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\treppchen4.xnb
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Sounds\Tischklingel.ogg
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\Sounds\Tischklingel.xnb
-C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.exe
-C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.deps.json
-C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.runtimeconfig.json
-C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.runtimeconfig.dev.json
-C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.dll
-C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli_Galli.pdb
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libSDL2-2.0.so.0
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libopenal.so.1
@@ -965,7 +959,13 @@ C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.AssemblyInfo.cs
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.csproj.CoreCompileInputs.cache
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.csproj.CopyComplete
-C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.dll
-C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.pdb
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli_Galli.genruntimeconfig.cache
 C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Content\img\AnimationSheet.xnb
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli Galli.exe
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli Galli.deps.json
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli Galli.runtimeconfig.json
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli Galli.runtimeconfig.dev.json
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli Galli.dll
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\bin\Debug\netcoreapp3.1\Halli Galli.pdb
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli Galli.dll
+C:\Users\bib\OneDrive - bib & FHDW\2. Semester\LEA\HalliGalli\Halli_Galli\Halli_Galli\obj\Debug\netcoreapp3.1\Halli Galli.pdb
