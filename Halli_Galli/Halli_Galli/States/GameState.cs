@@ -77,12 +77,10 @@ namespace Halli_Galli.States
         private int countdownzähler = 0;
         private TimeSpan countdown_letzte_dekrementierung;
         private bool soundgespielt;
-
-
+        private AnimatedSprite animation;
 
         public GameState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
-
             kartenrückseite = _content.Load<Texture2D>("img/Karten_Ruckseite");
             klingel = _content.Load<Texture2D>("img/Klingel");
             banane_1 = _content.Load<Texture2D>("img/Banane_1");
@@ -118,6 +116,9 @@ namespace Halli_Galli.States
             Zahl1 = _content.Load<Texture2D>("img/1");
             Zahl2 = _content.Load<Texture2D>("img/2");
             Zahl3 = _content.Load<Texture2D>("img/3");
+
+            Texture2D kartenflip = _content.Load<Texture2D>("img/AnimationSheet");
+            animation = new AnimatedSprite(kartenflip, 6, 1);
 
             var buttonTexture = _content.Load<Texture2D>("img/Button");
             var buttonFont = _content.Load<SpriteFont>("Fonts/File");
@@ -239,7 +240,7 @@ namespace Halli_Galli.States
 
                 for (int l = 0; l < count; l++)
                 {
-                    Spieler[Spieler_click].Karten.Insert(0, Tisch[0]);
+                    Spieler[Spieler_click].Karten.Insert(Spieler[Spieler_click].Karten.Count, Tisch[0]);
                     Tisch.RemoveAt(0);
                 }
 
@@ -337,8 +338,8 @@ namespace Halli_Galli.States
                     }
 
                     Spieleranzahl--;
-                    Tisch.Insert(Tisch.Count, Tisch[i]);
-                    Tisch.RemoveAt(i);
+                    //Tisch.Insert(Tisch.Count, Tisch[i]);
+                    //Tisch.RemoveAt(i);
                 }
             }
 
@@ -451,7 +452,6 @@ namespace Halli_Galli.States
                 
             }
 
-           // int rundealt = 3;
             if (letze_Austeilung + zeit_zwischen_Austeilen < gameTime.TotalGameTime && countdown == false)
             {
                 letze_Austeilung = gameTime.TotalGameTime;
@@ -477,6 +477,8 @@ namespace Halli_Galli.States
 
             foreach (var item in _Button4)
                 item.Update(gameTime);
+
+            animation.Update();
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
@@ -803,7 +805,11 @@ namespace Halli_Galli.States
             if (Spieleranzahl == 2)
             {
                 if (runde > 0)
+                {
+                    //if (derzeitiger_Spieler == 1)
+                    //    animation.Draw(spriteBatch, new Vector2(1920 / 4, 540));
                     spriteBatch.Draw(Früchte[Aktive_Karte1], new Vector2(1920 / 4, 540), sourceRectangle, Color.White, 1.57f, origin, 1.0f, SpriteEffects.None, 1);
+                }
 
                 if (runde > 1)
                     spriteBatch.Draw(Früchte[Aktive_Karte2], new Vector2(1920 * 3 / 4, 540), sourceRectangle, Color.White, 1.57f * 3, origin, 1.0f, SpriteEffects.None, 1);
@@ -866,7 +872,7 @@ namespace Halli_Galli.States
 
             }
 
-            spriteBatch.DrawString(kleine_Schrift, "" + Tisch.Count, new Vector2(900, 500), Color.Black);
+            spriteBatch.DrawString(Schrift_Groß, "" + Tisch.Count, new Vector2(960 - Schrift_Groß.MeasureString(Convert.ToString(Tisch.Count)).X / 2, 540 - Schrift_Groß.MeasureString(Convert.ToString(Tisch.Count)).Y / 2), Color.White);
 
            if(geklingelt == true)
             {

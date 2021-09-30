@@ -4,63 +4,65 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/Deal (1).mp3</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/Deal (2).mp3</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/Deal (3).mp3</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/Deal (4).mp3</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/File.spritefont</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/Fonts/File.spritefont</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/Fonts/Font.spritefont</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/0_Karten_Ausgeschieden.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/1.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/2.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/3.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Banane_1.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Banane_2.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Banane_4.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Banane_5.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Button.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Erdbeere_1.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Erdbeere_2.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Erdbeere_3.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Erdbeere_4.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Erdbeere_5.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Erdbeere_x4.jpg</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 1.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 2.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 3.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Karten_Ruckseite.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Klingel.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Leertaste.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Limette_1.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Limette_2.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Limette_3.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Limette_4.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Limette_5.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Logo.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/P1.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/P1_4x.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/P2.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/P2_4x.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/P3.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/P3_4x.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/P4.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/P4_4x.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Pflaume_1.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Pflaume_2.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Pflaume_3.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Pflaume_4.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Pflaume_5.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Schatten.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Tisch.jpg</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/Tisch1.jpg</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/treppchen2.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/treppchen3.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/img/treppchen4.png</File>
-    <File>C:/Users/bib/source/repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/Sounds/Tischklingel.mp3</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/Deal (1).mp3</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/Deal (2).mp3</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/Deal (3).mp3</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/Deal (4).mp3</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/File.spritefont</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/Fonts/File.spritefont</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/Fonts/Font.spritefont</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/0_Karten_Ausgeschieden.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/AnimationSheet.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Banane_1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Banane_2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Banane_3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Banane_4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Banane_5.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Button.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_5.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Erdbeere_x4.jpg</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Hilfe Seite 3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Karten_Ruckseite.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Klingel.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Leertaste.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Limette_1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Limette_2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Limette_3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Limette_4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Limette_5.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Logo.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/P1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/P1_4x.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/P2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/P2_4x.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/P3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/P3_4x.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/P4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/P4_4x.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Pflaume_1.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Pflaume_2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Pflaume_3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Pflaume_4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Pflaume_5.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Schatten.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Tisch.jpg</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/Tisch1.jpg</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/treppchen2.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/treppchen3.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/img/treppchen4.png</File>
+    <File>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/Sounds/Tischklingel.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

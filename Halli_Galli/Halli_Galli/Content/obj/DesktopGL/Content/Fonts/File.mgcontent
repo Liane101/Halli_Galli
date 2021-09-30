@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/bib/Source/Repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/Fonts/File.spritefont</SourceFile>
-  <SourceTime>2021-09-29T13:59:33.737339+02:00</SourceTime>
-  <DestFile>C:/Users/bib/Source/Repos/Halli_Galli10/Halli_Galli/Halli_Galli/Content/bin/DesktopGL/Content/Fonts/File.xnb</DestFile>
-  <DestTime>2021-09-29T13:59:38.8539887+02:00</DestTime>
+  <SourceFile>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/Fonts/File.spritefont</SourceFile>
+  <SourceTime>2021-09-29T14:52:29.7860905+02:00</SourceTime>
+  <DestFile>C:/Users/bib/OneDrive - bib &amp; FHDW/2. Semester/LEA/HalliGalli/Halli_Galli/Halli_Galli/Content/bin/DesktopGL/Content/Fonts/File.xnb</DestFile>
+  <DestTime>2021-09-29T14:52:41.7277871+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

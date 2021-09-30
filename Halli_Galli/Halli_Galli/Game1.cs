@@ -18,6 +18,7 @@ namespace Halli_Galli
         private State _nextState;
         public static int player;
         public static bool change = false;
+        
 
         public void ChangeState(State state)
         {
